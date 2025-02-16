@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavBar</title>
+    <!-- Lien vers le fichier CSS externe -->
+    <link rel="stylesheet" href="/style/NavBar.css">
+    <!-- Lien vers Boxicons pour les icônes -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 </head>
 <body>
+
+<nav class="navbar">
+    <!-- Logo -->
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+
+    <!-- Liste des éléments du menu -->
+    <ul>
+        <li><a href="#"><!--i class='bx bx-home'></i--> Accueil</a></li>
+        <li><a href="#"><!--i class='bx bx-list-ul'></i--> Liste</a></li>
+        <li><a href="#"><!--i class='bx bx-map'></i--> Voir la carte</a></li>
+    </ul>
+
+    <!-- Icônes de réglages, utilisateur et panier -->
+    <ul>
+        <a ><i class='bx bx-cog'></i> </a>
+        <a ><i class='bx bx-user'></i> </a>
+        <a ><i class='bx bx-cart'></i> </a>
+    </ul>
+</nav>
 
 </body>
 </html>
