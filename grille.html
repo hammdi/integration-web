@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacie en Ligne</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar"></div>
+    
+    <div style="display: flex;">
+        <!-- Filtrage -->
+        <aside style="width: 25%; padding: 10px;">
+            <input type="text" placeholder="Rechercher...">
+            <h3>Filtrer</h3>
+            <label>Prix : </label>
+            <input type="range" min="0" max="500" step="1">
+            
+            <h4>Catégorie</h4>
+            <ul>
+                <li><input type="checkbox"> Médicaments sur ordonnance</li>
+                <li><input type="checkbox"> Médicaments sans ordonnance</li>
+                <li><input type="checkbox"> Produits naturels</li>
+                <li><input type="checkbox"> Compléments alimentaires</li>
+            </ul>
+            
+            <h4>Laboratoire / Fabricant</h4>
+            <ul>
+                <li><input type="checkbox"> Sanofi</li>
+                <li><input type="checkbox"> Pfizer</li>
+                <li><input type="checkbox"> Novartis</li>
+                <li><input type="checkbox"> Bayer</li>
+            </ul>
+            
+            <h4>Forme du produit</h4>
+            <ul>
+                <li><input type="checkbox"> Comprimés</li>
+                <li><input type="checkbox"> Gélules</li>
+                <li><input type="checkbox"> Sirop</li>
+            </ul>
+            
+            <h4>Mode d'administration</h4>
+            <ul>
+                <li><input type="checkbox"> Oral</li>
+                <li><input type="checkbox"> Cutané</li>
+                <li><input type="checkbox"> Injectable</li>
+            </ul>
+            
+            <h4>Origine</h4>
+            <ul>
+                <li><input type="checkbox"> Synthétique</li>
+                <li><input type="checkbox"> Naturel / Bio</li>
+            </ul>
+            
+            <h4>Disponibilité</h4>
+            <ul>
+                <li><input type="checkbox"> En stock</li>
+                <li><input type="checkbox"> Sur commande</li>
+            </ul>
+            
+            <button>Voir la Liste Comparer</button>
+        </aside>
+
+
+        
+        <!-- Contenu principal -->
+        <main style="width: 75%; padding: 10px;">
+            <div>
+                <button onclick="showOrdonnancePopup()">Scannez votre ordonnance</button>
+                <button>Mode aide vocal avec AI</button>
+                <button>Voir médicaments favoris</button>
+            </div>
+            
+            <div>
+                <p>Il y a 350 produits.</p>
+                <button>Grille</button>
+                <button>Liste</button>
+                <label for="sort">Trier par :</label>
+                <select id="sort">
+                    <option value="name">Nom</option>
+                    <option value="price">Prix</option>
+                    <option value="stock">En stock</option>
+                </select>
+            </div>
+
+            <section id="product-list">
+                <article style="display: flex; align-items: center;">
+                    <img src="medicament.jpg" alt="Image médicament" style="margin-right: 10px;">
+                    <div>
+                        <h2>Paracétamol</h2>
+                        <p>Prix : 5TND <del>7TND</del></p>
+                        <p>Un antidouleur utilisé pour soulager la douleur et la fièvre.</p>
+                        <p>Disponibilité : <strong>En stock</strong></p>
+                        <button>Ajouter au panier</button>
+                        <button>Ajouter aux favoris</button>
+                        <button>Voir en détail</button>
+                        <button>Comparer</button>
+                    </div>
+                </article>
+                
+                <article style="display: flex; align-items: center;">
+                    <img src="medicament.jpg" alt="Image médicament" style="margin-right: 10px;">
+                    <div>
+                        <h2>Ibuprofène</h2>
+                        <p>Prix : 8TND <del>10TND</del></p>
+                        <p>Un anti-inflammatoire utilisé pour réduire la douleur et l'inflammation.</p>
+                        <p>Disponibilité : <strong>En stock</strong></p>
+                        <button>Ajouter au panier</button>
+                        <button>Ajouter aux favoris</button>
+                        <button>Voir en détail</button>
+                        <button>Comparer</button>
+                    </div>
+                </article>
+                
+                <article style="display: flex; align-items: center;">
+                    <img src="medicament.jpg" alt="Image médicament" style="margin-right: 10px;">
+                    <div>
+                        <h2>Vitamine C</h2>
+                        <p>Prix : 12TND <del>15TND</del></p>
+                        <p>Un complément essentiel pour renforcer le système immunitaire.</p>
+                        <p>Disponibilité : <strong>En stock</strong></p>
+                        <button>Ajouter au panier</button>
+                        <button>Ajouter aux favoris</button>
+                        <button>Voir en détail</button>
+                        <button>Comparer</button>
+                    </div>
+                </article>
+            </section>
+
+            <nav>
+                <button>Précédent</button>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>Suivant</button>
+            </nav>
+        </main>
+
+    </div>
+    <div id="footer"></div>
+
+    <script>
+        // Add this before the existing fetch scripts
+        function showOrdonnancePopup() {
+            // Create the popup element
+            const popupHTML = `
+                <div id="ordonnancePopup" class="popup-overlay" style="
+                    display: block;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    z-index: 1000;">
+                    <div class="popup-content" style="
+                        position: fixed;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        background-color: white;
+                        padding: 20px;
+                        border-radius: 10px;
+                        width: 80%;
+                        max-width: 500px;
+                        z-index: 1001;">
+                        <span class="close-btn" onclick="closePopup()" style="
+                            position: absolute;
+                            right: 10px;
+                            top: 10px;
+                            cursor: pointer;">&times;</span>
+                        <h2>Importer un fichier pdf ou image de l'ordonnance</h2>
+                        <p>Message d'acceptation des politiques de confidentialité :"En continuant à utiliser notre application, vous acceptez nos Politiques de Confidentialité. Nous nous engageons à protéger vos données personnelles et à les utiliser conformément à nos conditions. Vous pouvez consulter les détails de nos politiques [ici](lien vers les politiques). Si vous êtes d'accord, cliquez sur "Accepter" pour continuer."</p>
+                        
+                        <div class="upload-area" style="
+                            border: 2px dashed #ccc;
+                            padding: 20px;
+                            text-align: center;
+                            margin: 20px 0;">
+                            <input type="checkbox" id="acceptPolicy"> Cliquez sur accepter avant importer
+                            <br><br>
+                            <button id="importBtn" disabled>Importer</button>
+                            <button onclick="closePopup()">Retour en arrière</button>
+                        </div>
+                    </div>
+                </div>`;
+            
+            // Add popup to body
+            document.body.insertAdjacentHTML('beforeend', popupHTML);
+            
+            // Add checkbox event listener
+            const acceptCheckbox = document.querySelector('#acceptPolicy');
+            const importBtn = document.querySelector('#importBtn');
+            
+            acceptCheckbox.addEventListener('change', function() {
+                importBtn.disabled = !this.checked;
+            });
+        }
+
+        function closePopup() {
+            const popup = document.querySelector('#ordonnancePopup');
+            if (popup) {
+                popup.remove();
+            }
+        }
+
+        // Importation dynamique du navbar
+        fetch('/Balises/NavBar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+        // Importation dynamique du navbar
+        fetch('/Balises/Footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
