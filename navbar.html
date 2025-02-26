@@ -1,27 +1,78 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar</title>
-    <link rel="stylesheet" href="navbar.css">
-    <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+    <title>NavBar</title>
+    <!-- Lien vers Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lien vers Boxicons pour les icônes -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <!-- Lien vers la police Ubuntu -->
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="bg-gray-100">
 
-    <nav class="navbar">
-        <div class="logo">LOGO</div>
-        <div class="menu">
-            <a href="#">Accueil</a>
-            <a href="#">Liste</a>
-            <a href="#">Voir Map</a>
+<nav class="navbar bg-white shadow-lg fixed w-full top-0 left-0 z-10">
+    <div class="container mx-auto grid grid-cols-12 gap-6 py-4 px-6">
+        <!-- Logo -->
+        <div class="col-span-2 flex justify-start items-center">
+            <img src="/images/logo.png" alt="Logo" class="h-[98px] w-[127px] object-contain">
         </div>
-        <div class="icons">
-            <span class="icon"><i class="fas fa-cog"></i> ⚙️</span>
-            <span class="icon"><i class="fas fa-user"></i> 👤</span>
-            <span class="icon"><i class="fas fa-shopping-cart"></i> 🛒</span>
-        </div>
-    </nav>
+
+        <!-- Liste des éléments du menu -->
+        <ul class="col-span-6 flex justify-around items-center space-x-6 text-2xl font-semibold text-gray-800">
+            <li class="h-full flex items-center">
+                <a href="Acceuil.html" class="px-4 py-2 h-full rounded-md hover:bg-gray-300 hover:text-white transition duration-300 flex items-center">
+                    Accueil
+                </a>
+            </li>
+            <li class="h-full flex items-center">
+                <a href="grille.html" class="px-4 py-2 h-full rounded-md hover:bg-gray-300 hover:text-white transition duration-300 flex items-center">
+                    Liste
+                </a>
+            </li>
+            <li class="h-full flex items-center">
+                <a href="#" class="px-4 py-2 h-full rounded-md hover:bg-gray-300 hover:text-white transition duration-300 flex items-center">
+                    Voir la carte
+                </a>
+            </li>
+        </ul>
+
+        <!-- Icônes de réglages, utilisateur et panier -->
+        <ul class="col-span-4 flex justify-end items-center space-x-6">
+            <li class="h-full flex items-center">
+                <a href="#" class="text-gray-800 hover:text-white transition duration-300 p-2 h-full rounded-md hover:bg-gray-300 flex items-center justify-center">
+                    <i class='bx bx-cog text-3xl' style="width: 53px; height: 53px; margin-top: 17px; margin-left: 17px;"></i>
+                </a>
+            </li>
+            <li class="h-full flex items-center">
+                <a href="#" class="text-gray-800 hover:text-white transition duration-300 p-2 h-full rounded-md hover:bg-gray-300 flex items-center justify-center">
+                    <i class='bx bx-user text-3xl' style="width: 53px; height: 53px; margin-top: 17px; margin-left: 17px;"></i>
+                </a>
+            </li>
+            <li class="h-full flex items-center">
+                <a href="#" class="text-gray-800 hover:text-white transition duration-300 p-2 h-full rounded-md hover:bg-gray-300 flex items-center justify-center">
+                    <i class='bx bx-cart text-3xl' style="width: 53px; height: 53px; margin-top: 17px; margin-left: 17px;"></i>
+                </a>
+            </li>
+        </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>
