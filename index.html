@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte de Profil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+    <!-- Contenu principal -->
+    <div class="flex-grow flex items-center justify-center">
+        <div class="bg-white shadow-lg rounded-xl p-6 max-w-sm text-center">
+            <img class="w-24 h-24 mx-auto rounded-full border-4 border-blue-500" 
+                 src="https://i.pravatar.cc/150?img=3" 
+                 alt="Avatar">
+            <h2 class="mt-4 text-xl font-semibold text-gray-800">Mehdi Ben Attaya</h2>
+            <p class="text-gray-600">Développeur Full-Stack | Passionné d'IA</p>
+            
+            <div class="mt-4">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition">
+                    Suivre
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <script src="script.js"></script> 
+</body>
+
+
+<script>   
+
+// Fonction pour charger un fichier HTML dans un élément spécifique
+function loadComponent(containerId, filePath) {
+    fetch(filePath)
+        .then(response => response.text())
+        .then(data => document.getElementById(containerId).innerHTML = data)
+        .catch(error => console.error(`Erreur lors du chargement de ${filePath}:`, error));
+}
+
+// Charger la navbar et le footer
+loadComponent("navbar-container", "Balises/NavBar.html");
+loadComponent("footer-container", "Balises/Footer.html");
+</script>
+</html>
