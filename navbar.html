@@ -1,78 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NavBar</title>
-    <!-- Lien vers Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lien vers Boxicons pour les icônes -->
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
-    <!-- Lien vers la police Ubuntu -->
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@600&display=swap" rel="stylesheet">
+    <title>Comparaison - Pharmacom</title>
+    <link rel="stylesheet" href="./output.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 </head>
-<body class="bg-gray-100">
+<body class="bg-background text-gray-900 flex flex-col min-h-screen">
+    <header class="border-b">
+        <nav class="flex justify-between items-center px-4 sm:px-6 py-0 h-20 max-w-screen-xl mx-auto">
 
-<nav class="navbar bg-white shadow-lg fixed w-full top-0 left-0 z-10">
-    <div class="container mx-auto grid grid-cols-12 gap-6 py-4 px-6">
-        <!-- Logo -->
-        <div class="col-span-2 flex justify-start items-center">
-            <img src="/images/logo.png" alt="Logo" class="h-[98px] w-[127px] object-contain">
-        </div>
+            <!-- Logo and Navigation Links -->
+            <div class="flex items-center gap-2 sm:gap-10">
+                <img src="./assets/images/image-ai-brush-removebg-7b2rsrbsl (1).png" alt="Pharmacom" class="w-20 sm:w-28">
+                
+                <!-- Navigation Links (Visible on All Screens) -->
+                <ul class="flex gap-2 sm:gap-8">
+                    <li>
+                        <a href="#" class="text-base sm:text-xl font-medium hover:bg-gray-200 px-2 sm:px-4 py-1 sm:py-2 rounded-lg transition duration-300">
+                            ACCUEIL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-base sm:text-xl font-medium hover:bg-gray-200 px-2 sm:px-4 py-1 sm:py-2 rounded-lg transition duration-300">
+                            LISTES
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-base sm:text-xl font-medium hover:bg-gray-200 px-2 sm:px-4 py-1 sm:py-2 rounded-lg transition duration-300">
+                            VOIR MAP
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-        <!-- Liste des éléments du menu -->
-        <ul class="col-span-6 flex justify-around items-center space-x-6 text-2xl font-semibold text-gray-800">
-            <li class="h-full flex items-center">
-                <a href="Acceuil.html" class="px-4 py-2 h-full rounded-md hover:bg-gray-300 hover:text-white transition duration-300 flex items-center">
-                    Accueil
+            <!-- Icons (Settings, Profile, Cart) -->
+            <div class="flex gap-2 sm:gap-8">
+                <a href="#" class="hover:bg-gray-200 p-1 sm:p-2 rounded-lg transition duration-300">
+                    <img src="./assets/images/icons8-paramètres-50.png" alt="Settings" class="w-6 sm:w-10 brightness-0">
                 </a>
-            </li>
-            <li class="h-full flex items-center">
-                <a href="grille.html" class="px-4 py-2 h-full rounded-md hover:bg-gray-300 hover:text-white transition duration-300 flex items-center">
-                    Liste
+                <a href="#" class="hover:bg-gray-200 p-1 sm:p-2 rounded-lg transition duration-300">
+                    <img src="./assets/images/profil-de-lutilisateur.png" alt="Profile" class="w-6 sm:w-10 brightness-0">
                 </a>
-            </li>
-            <li class="h-full flex items-center">
-                <a href="#" class="px-4 py-2 h-full rounded-md hover:bg-gray-300 hover:text-white transition duration-300 flex items-center">
-                    Voir la carte
+                <a href="#" class="hover:bg-gray-200 p-1 sm:p-2 rounded-lg transition duration-300">
+                    <img src="./assets/images/shopping_cart_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="Cart" class="w-6 sm:w-10 brightness-0">
                 </a>
-            </li>
-        </ul>
+            </div>
 
-        <!-- Icônes de réglages, utilisateur et panier -->
-        <ul class="col-span-4 flex justify-end items-center space-x-6">
-            <li class="h-full flex items-center">
-                <a href="#" class="text-gray-800 hover:text-white transition duration-300 p-2 h-full rounded-md hover:bg-gray-300 flex items-center justify-center">
-                    <i class='bx bx-cog text-3xl' style="width: 53px; height: 53px; margin-top: 17px; margin-left: 17px;"></i>
-                </a>
-            </li>
-            <li class="h-full flex items-center">
-                <a href="#" class="text-gray-800 hover:text-white transition duration-300 p-2 h-full rounded-md hover:bg-gray-300 flex items-center justify-center">
-                    <i class='bx bx-user text-3xl' style="width: 53px; height: 53px; margin-top: 17px; margin-left: 17px;"></i>
-                </a>
-            </li>
-            <li class="h-full flex items-center">
-                <a href="#" class="text-gray-800 hover:text-white transition duration-300 p-2 h-full rounded-md hover:bg-gray-300 flex items-center justify-center">
-                    <i class='bx bx-cart text-3xl' style="width: 53px; height: 53px; margin-top: 17px; margin-left: 17px;"></i>
-                </a>
-            </li>
-        </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </nav>
+    </header>
 </body>
 </html>
