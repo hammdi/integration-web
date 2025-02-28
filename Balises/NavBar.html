@@ -1,36 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NavBar</title>
-    <!-- Lien vers le fichier CSS externe -->
-    <link rel="stylesheet" href="/style/NavBar.css">
-    <!-- Lien vers Boxicons pour les icônes -->
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
-</head>
-<body>
-
-<nav class="navbar">
-    <!-- Logo -->
-    <div class="logo">
-        <img src="/images/logo.png" alt="Logo">
+<div class="w-[1508px] h-[103px] relative">
+    <div class="w-[1508px] h-[101px] left-0 top-0 absolute bg-white shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]"></div>
+    <div class="w-[163px] h-[101px] left-[547px] top-0 absolute justify-center items-center inline-flex">
+        <div class="w-[163px] h-[101px] bg-white hover:bg-gray-300"></div>
     </div>
-
-    <!-- Liste des éléments du menu -->
-    <ul>
-        <li><a href="Acceuil.html"><!--i class='bx bx-home'></i--> Accueil</a></li>
-        <li><a href="grille.html"><!--i class='bx bx-list-ul'></i--> Liste</a></li>
-        <li><a href="#"><!--i class='bx bx-map'></i--> Voir la carte</a></li>
-    </ul>
-
-    <!-- Icônes de réglages, utilisateur et panier -->
-    <ul>
-        <a ><i class='bx bx-cog'></i> </a>
-        <a ><i class='bx bx-user'></i> </a>
-        <a ><i class='bx bx-cart'></i> </a>
-    </ul>
-</nav>
-
-</body>
-</html>
+    <div class="w-[146px] h-[101px] left-[401px] top-0 absolute justify-center items-center inline-flex">
+        <div class="w-[146px] h-[101px] bg-white hover:bg-gray-300"></div>
+    </div>
+    <div class="w-[90px] h-[101px] left-[1111px] top-0 absolute flex-col justify-center items-center inline-flex">
+        <div class="w-[90px] h-[101px] bg-white hover:bg-gray-300"></div>
+    </div>
+    <div class="w-[90px] h-[101px] left-[1021px] top-0 absolute flex-col justify-center items-center inline-flex">
+        <div class="w-[90px] h-[101px] bg-white hover:bg-gray-300"></div>
+    </div>
+    <div class="w-[90px] h-[101px] left-[1201px] top-0 absolute flex-col justify-center items-center inline-flex">
+        <div class="w-[90px] h-[101px] bg-white hover:bg-gray-300"></div>
+    </div>
+    <div class="w-[163px] h-[101px] left-[710px] top-0 absolute justify-center items-center inline-flex">
+        <div class="w-[163px] h-[101px] bg-white hover:bg-gray-300"></div>
+    </div>
+    <a href="http://localhost:58351/integration-web/Acceuil.html?_ijt=icb2tk0afdaveo0c3o9c1i88ng&_ij_reload=RELOAD_ON_SAVE" class="w-[97px] h-7 left-[426px] top-[37px] absolute text-black text-2xl font-semibold font-['Ubuntu Sans'] leading-7 ">ACCUEIL</a>
+    <a href="../grille.html" class="w-[76px] h-7 left-[594px] top-[37px] absolute text-black text-2xl font-semibold font-['Ubuntu Sans'] leading-7">LISTES</a>
+    <a href="#" class="w-[119px] h-7 left-[733px] top-[37px] absolute text-black text-2xl font-semibold font-['Ubuntu Sans'] leading-7">VOIR MAP</a>
+    <img class="w-[127px] h-[98px] left-[235px] top-[5px] absolute" src="/images/logo.png" />
+    <button data-svg-wrapper class="left-[1039px] top-[24px] absolute">
+        <svg width="53" height="52" viewBox="0 0 53 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M45.8137 32.3085L53 29.6967L52.9711 22.1142L45.7535 19.5496C45.4597 18.7001 45.108 17.871 44.7007 17.0678L47.9024 10.2298L42.4169 4.888L35.4642 8.08127C34.6442 7.68188 33.7975 7.33757 32.9299 7.05073L30.2678 0L22.5395 0.0283636L19.9256 7.10982C19.0598 7.39823 18.2147 7.74331 17.396 8.14273L10.4265 5.00145L4.982 10.3811L8.23668 17.2073C7.82949 18.0118 7.47855 18.8426 7.18632 19.6938L0 22.3033L0.028909 29.8858L7.24655 32.4504C7.54033 33.2999 7.89205 34.129 8.29932 34.9322L5.09764 41.7702L10.5807 47.112L17.5358 43.9187C18.3558 44.3182 19.2025 44.6625 20.0701 44.9493L22.7322 52L30.4605 51.9716L33.0744 44.8902C33.9402 44.6018 34.7853 44.2567 35.604 43.8573L42.5735 46.9985L48.018 41.6189L44.7633 34.7951C45.1705 33.9906 45.5214 33.1598 45.8137 32.3085ZM45.1223 41.1249L42.0507 44.1622L35.5606 41.236L34.5271 41.7442C33.8031 42.0955 33.0563 42.3995 32.2915 42.6542L31.2025 43.0229L28.7694 49.6151L24.4089 49.6316L21.9275 43.0631L20.829 42.7062C20.0653 42.4527 19.3199 42.1487 18.5982 41.7962L17.5623 41.2998L11.0866 44.2709L7.98855 41.2573L10.9734 34.8873L10.453 33.8709C10.094 33.1624 9.78331 32.4312 9.52314 31.6822L9.14973 30.6138L2.42836 28.2265L2.41632 23.9484L9.10636 21.5138L9.47255 20.436C9.73044 19.6861 10.0395 18.9541 10.3976 18.2449L10.9084 17.2285L7.87773 10.8751L10.9493 7.83782L17.4394 10.764L18.4729 10.2558C19.1969 9.90451 19.9437 9.60052 20.7085 9.34582L21.7975 8.97709L24.2306 2.38491L28.5911 2.36836L31.0725 8.93691L32.171 9.29382C32.934 9.54707 33.6786 9.85111 34.3994 10.2038L35.4353 10.7025L41.9182 7.72909L45.0139 10.7427L42.029 17.1127L42.5494 18.1291C42.9084 18.8376 43.2191 19.5688 43.4793 20.3178L43.8527 21.3862L50.574 23.7735L50.5861 28.0516L43.896 30.4862L43.5299 31.564C43.272 32.3139 42.9629 33.0459 42.6048 33.7551L42.094 34.7715L45.1223 41.1249ZM26.5 14.6545C24.2129 14.6545 21.9772 15.3199 20.0756 16.5666C18.174 17.8133 16.6918 19.5852 15.8166 21.6583C14.9414 23.7314 14.7124 26.0126 15.1586 28.2134C15.6047 30.4142 16.7061 32.4358 18.3233 34.0224C19.9405 35.6091 22.0009 36.6897 24.244 37.1275C26.4872 37.5652 28.8122 37.3405 30.9252 36.4818C33.0382 35.6231 34.8442 34.1689 36.1148 32.3032C37.3854 30.4374 38.0636 28.2439 38.0636 26C38.0636 22.991 36.8453 20.1052 34.6767 17.9776C32.5081 15.8499 29.5669 14.6545 26.5 14.6545ZM26.5 34.9818C24.6894 34.9818 22.9195 34.455 21.414 33.4681C19.9086 32.4812 18.7352 31.0784 18.0423 29.4372C17.3494 27.796 17.1681 25.99 17.5214 24.2477C17.8746 22.5054 18.7465 20.905 20.0268 19.6489C21.307 18.3928 22.9382 17.5373 24.714 17.1908C26.4898 16.8442 28.3305 17.0221 30.0033 17.7019C31.6761 18.3817 33.1058 19.5329 34.1117 21.01C35.1176 22.487 35.6545 24.2236 35.6545 26C35.652 28.3814 34.6867 30.6645 32.9704 32.3483C31.2542 34.0322 28.9272 34.9793 26.5 34.9818Z" fill="black"/>
+        </svg>
+    </button>
+    <button data-svg-wrapper class="left-[1215px] top-[24px] absolute">
+        <svg width="52" height="47" viewBox="0 0 52 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.65012 3.45395C0.761595 3.45395 0 2.66698 0 1.70512C0 0.786977 0.761595 0 1.65012 0H5.96583C6.00814 0 6.09276 0 6.13507 0C7.65826 0.0437209 9.01221 0.349767 10.1546 1.09302C11.4239 1.92372 12.3548 3.19163 12.8625 5.07163C12.8625 5.11535 12.8625 5.15907 12.9048 5.20279L13.3279 6.95163H50.3499C51.2807 6.95163 52 7.7386 52 8.65674C52 8.83163 51.9577 9.00651 51.9154 9.1814L47.5997 27.1507C47.4304 27.9377 46.7535 28.4623 45.9919 28.4623H18.9129C19.5053 30.7358 20.0976 31.96 20.9015 32.5284C21.8747 33.1842 23.5671 33.2279 26.402 33.1842H26.4443H45.5688C46.4996 33.1842 47.2189 33.9712 47.2189 34.8893C47.2189 35.8512 46.4573 36.5944 45.5688 36.5944H26.4443C22.9325 36.6381 20.7746 36.5507 19.0399 35.3702C17.2628 34.146 16.332 32.0474 15.4011 28.2437L9.73149 6.07721C9.73149 6.03349 9.73149 6.03349 9.68918 5.98977C9.43531 5.02791 9.01221 4.37209 8.41985 4.02233C7.8275 3.62884 7.0236 3.45395 6.09276 3.45395C6.05045 3.45395 6.00814 3.45395 5.96583 3.45395H1.65012ZM40.6184 38.6056C42.8609 38.6056 44.6802 40.4856 44.6802 42.8028C44.6802 45.12 42.8609 47 40.6184 47C38.3759 47 36.5565 45.12 36.5565 42.8028C36.5565 40.4856 38.3759 38.6056 40.6184 38.6056ZM22.8055 38.6056C25.048 38.6056 26.8674 40.4856 26.8674 42.8028C26.8674 45.12 25.048 47 22.8055 47C20.5631 47 18.7437 45.12 18.7437 42.8028C18.7437 40.4856 20.5631 38.6056 22.8055 38.6056ZM14.2587 10.3619L18.0244 25.0084H44.7225L48.2343 10.3619H14.2587Z" fill="black"/>
+        </svg>
+    </button>
+    <button>
+    <img class="w-[52px] h-[52px] left-[1129px] top-[24px] absolute" src="./assets/images/profil-de-lutilisateur.png" />
+    </button>
+</div>
