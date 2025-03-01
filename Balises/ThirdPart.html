@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacie - Catégories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .category-card {
+            transition: all 0.3s ease;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        
+        .product-card {
+            transition: all 0.5s;
+        }
+        
+        .product-card:hover {
+            transform: scale(1.1) translate(8px, 8px);
+        }
+        
+        .nav-arrow {
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .nav-arrow:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <!-- Prescription Section Header -->
+        <div class="w-full mb-8">
+            <div class="bg-[#3bbece] rounded-2xl p-6">
+                <h2 class="text-center text-black text-2xl md:text-4xl font-bold font-['Ubuntu Sans']">
+                    Medicaments avec ordonnance
+                </h2>
+            </div>
+        </div>
+
+        <!-- Category Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <!-- Analgésiques Card -->
+            <div class="category-card bg-[#afe3f1] rounded-2xl p-6 overflow-hidden relative">
+                <div class="flex flex-col md:flex-row items-start gap-6">
+                    <img src="/images/PainRelife.png" alt="Analgésiques" class="w-32 md:w-40 h-auto"/>
+                    <div class="flex flex-col gap-4">
+                        <h3 class="text-2xl font-semibold">Analgésiques</h3>
+                        <p class="text-base font-medium">
+                            Libero diam auctor tristique hendrerit in eu vel id nec leo amet
+                        </p>
+                        <a href="#" class="inline-flex items-center text-[#1364ff] border-b border-[#1364ff] pb-2 gap-2">
+                            Explorez Category
+                            <svg class="w-4 h-4" viewBox="0 0 13 12" fill="none">
+                                <path d="M12.5303 6.53033C12.8232 6.23744 12.8232 5.76256 12.5303 5.46967L7.75736 0.6967C7.46447 0.403806 6.98959 0.403806 6.6967 0.6967C6.40381 0.989593 6.40381 1.46447 6.6967 1.75736L10.9393 6L6.6967 10.2426C6.40381 10.5355 6.40381 11.0104 6.6967 11.3033C6.98959 11.5962 7.46447 11.5962 7.75736 11.3033L12.5303 6.53033ZM-6.55671e-08 6.75L12 6.75L12 5.25L6.55671e-08 5.25L-6.55671e-08 6.75Z" fill="#1364FF"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Allergies Card -->
+            <div class="category-card bg-white rounded-2xl p-6 overflow-hidden">
+                <div class="flex flex-col md:flex-row items-start gap-6">
+                    <div class="flex flex-col gap-4">
+                        <h3 class="text-2xl font-semibold text-[#0d0d0d]">Médicaments contre les allergies</h3>
+                        <p class="text-[#7a7a7a]">
+                            Libero diam auctor tristique hendrerit in eu vel id nec leo amet
+                        </p>
+                        <a href="#" class="inline-flex items-center text-[#1364ff] border-b border-[#1364ff] pb-2 gap-2">
+                            Explorez Category
+                            <svg class="w-4 h-4" viewBox="0 0 13 12" fill="none">
+                                <path d="M12.5303 6.53033C12.8232 6.23744 12.8232 5.76256 12.5303 5.46967L7.75736 0.6967C7.46447 0.403806 6.98959 0.403806 6.6967 0.6967C6.40381 0.989593 6.40381 1.46447 6.6967 1.75736L10.9393 6L6.6967 10.2426C6.40381 10.5355 6.40381 11.0104 6.6967 11.3033C6.98959 11.5962 7.46447 11.5962 7.75736 11.3033L12.5303 6.53033ZM-6.55671e-08 6.75L12 6.75L12 5.25L6.55671e-08 5.25L-6.55671e-08 6.75Z" fill="#1364FF"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <img src="/images/Diosmine.png" alt="Allergies" class="w-32 md:w-48 h-auto ml-auto"/>
+                </div>
+            </div>
+
+            <!-- First Aid Card -->
+            <div class="category-card bg-white rounded-2xl p-6 overflow-hidden">
+                <div class="flex flex-col md:flex-row items-start gap-6">
+                    <div class="flex flex-col gap-4">
+                        <h3 class="text-2xl font-semibold text-[#0d0d0d]">Fournitures de premiers secours</h3>
+                        <p class="text-[#7a7a7a]">
+                            Libero diam auctor tristique hendrerit in eu vel id nec leo amet
+                        </p>
+                        <a href="#" class="inline-flex items-center text-[#1364ff] border-b border-[#1364ff] pb-2 gap-2">
+                            Explorez Category
+                            <svg class="w-4 h-4" viewBox="0 0 13 12" fill="none">
+                                <path d="M12.5303 6.53033C12.8232 6.23744 12.8232 5.76256 12.5303 5.46967L7.75736 0.6967C7.46447 0.403806 6.98959 0.403806 6.6967 0.6967C6.40381 0.989593 6.40381 1.46447 6.6967 1.75736L10.9393 6L6.6967 10.2426C6.40381 10.5355 6.40381 11.0104 6.6967 11.3033C6.98959 11.5962 7.46447 11.5962 7.75736 11.3033L12.5303 6.53033ZM-6.55671e-08 6.75L12 6.75L12 5.25L6.55671e-08 5.25L-6.55671e-08 6.75Z" fill="#1364FF"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <img src="/images/Kit.png" alt="First Aid" class="w-32 md:w-48 h-auto ml-auto"/>
+                </div>
+            </div>
+
+            <!-- Dental Care Card -->
+            <div class="category-card bg-white rounded-2xl p-6 overflow-hidden">
+                <div class="flex flex-col md:flex-row items-start gap-6">
+                    <div class="flex flex-col gap-4">
+                        <h3 class="text-2xl font-semibold text-[#0d0d0d]">Soins dentaires</h3>
+                        <p class="text-[#7a7a7a]">
+                            Libero diam auctor tristique hendrerit in eu vel id nec leo amet
+                        </p>
+                        <a href="#" class="inline-flex items-center text-[#1364ff] border-b border-[#1364ff] pb-2 gap-2">
+                            Explorez Category
+                            <svg class="w-4 h-4" viewBox="0 0 13 12" fill="none">
+                                <path d="M12.5303 6.53033C12.8232 6.23744 12.8232 5.76256 12.5303 5.46967L7.75736 0.6967C7.46447 0.403806 6.98959 0.403806 6.6967 0.6967C6.40381 0.989593 6.40381 1.46447 6.6967 1.75736L10.9393 6L6.6967 10.2426C6.40381 10.5355 6.40381 11.0104 6.6967 11.3033C6.98959 11.5962 7.46447 11.5962 7.75736 11.3033L12.5303 6.53033ZM-6.55671e-08 6.75L12 6.75L12 5.25L6.55671e-08 5.25L-6.55671e-08 6.75Z" fill="#1364FF"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <img src="/images/dentaires.png" alt="Dental Care" class="w-32 md:w-40 h-auto ml-auto"/>
+                </div>
+            </div>
+        </div>
+
+        <!-- Over-the-counter Section -->
+        <div class="w-full mb-8">
+            <div class="bg-[#3bbece] rounded-2xl p-6">
+                <h2 class="text-center text-black text-2xl md:text-4xl font-bold font-['Ubuntu Sans']">
+                    Medicaments sans ordonnance
+                </h2>
+            </div>
+        </div>
+
+        <!-- Product Carousel -->
+        <div class="relative">
+            <!-- Navigation Arrows -->
+            <button class="nav-arrow absolute left-0 top-1/2 -translate-y-1/2 z-10">
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+                    <path d="M22 30.8L13.2 22L22 13.2L25.08 16.28L21.56 19.8H30.8V24.2H21.56L25.08 27.72L22 30.8Z" fill="black" fill-opacity="0.44"/>
+                    <path d="M22 44C25.0433 44 27.9033 43.4225 30.58 42.2675C33.2567 41.1125 35.585 39.545 37.565 37.565C39.545 35.585 41.1125 33.2567 42.2675 30.58C43.4225 27.9033 44 25.0433 44 22C44 18.9567 43.4225 16.0967 42.2675 13.42C41.1125 10.7433 39.545 8.415 37.565 6.435C35.585 4.455 33.2567 2.8875 30.58 1.7325C27.9033 0.5775 25.0433 0 22 0C18.9567 0 16.0967 0.5775 13.42 1.7325C10.7433 2.8875 8.415 4.455 6.435 6.435C4.455 8.415 2.8875 10.7433 1.7325 13.42C0.577499 16.0967 0 18.9567 0 22C0 25.0433 0.577499 27.9033 1.7325 30.58C2.8875 33.2567 4.455 35.585 6.435 37.565C8.415 39.545 10.7433 41.1125 13.42 42.2675C16.0967 43.4225 18.9567 44 22 44Z" fill="black" fill-opacity="0.44"/>
+                </svg>
+            </button>
+
+            <!-- Products Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 px-12">
+                <!-- Product Card -->
+                <div class="product-card bg-white rounded-2xl p-6 shadow-md">
+                    <div class="flex flex-col items-center">
+                        <img src="/images/Diosmine.png" alt="Diosmine" class="w-32 h-32 object-contain mb-4"/>
+                        <h3 class="text-xl font-extrabold text-black mb-4">Diosmine</h3>
+                        <p class="text-xl font-bold text-black">9.740 DT</p>
+                    </div>
+                </div>
+
+                <!-- Repeat Product Cards -->
+                <div class="product-card bg-white rounded-2xl p-6 shadow-md">
+                    <div class="flex flex-col items-center">
+                        <img src="/images/Diosmine.png" alt="Diosmine" class="w-32 h-32 object-contain mb-4"/>
+                        <h3 class="text-xl font-extrabold text-black mb-4">Diosmine</h3>
+                        <p class="text-xl font-bold text-black">9.740 DT</p>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-2xl p-6 shadow-md">
+                    <div class="flex flex-col items-center">
+                        <img src="/images/Diosmine.png" alt="Diosmine" class="w-32 h-32 object-contain mb-4"/>
+                        <h3 class="text-xl font-extrabold text-black mb-4">Diosmine</h3>
+                        <p class="text-xl font-bold text-black">9.740 DT</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Arrow -->
+            <button class="nav-arrow absolute right-0 top-1/2 -translate-y-1/2 z-10">
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+                    <path d="M22 30.8L30.8 22L22 13.2L18.92 16.28L22.44 19.8H13.2V24.2H22.44L18.92 27.72L22 30.8Z" fill="black" fill-opacity="0.44"/>
+                    <path d="M22 44C18.9567 44 16.0967 43.4225 13.42 42.2675C10.7433 41.1125 8.415 39.545 6.435 37.565C4.455 35.585 2.8875 33.2567 1.7325 30.58C0.5775 27.9033 0 25.0433 0 22C0 18.9567 0.5775 16.0967 1.7325 13.42C2.8875 10.7433 4.455 8.415 6.435 6.435C8.415 4.455 10.7433 2.8875 13.42 1.7325C16.0967 0.5775 18.9567 0 22 0C25.0433 0 27.9033 0.5775 30.58 1.7325C33.2567 2.8875 35.585 4.455 37.565 6.435C39.545 8.415 41.1125 10.7433 42.2675 13.42C43.4225 16.0967 44 18.9567 44 22C44 25.0433 43.4225 27.9033 42.2675 30.58C41.1125 33.2567 39.545 35.585 37.565 37.565C35.585 39.545 33.2567 41.1125 30.58 42.2675C27.9033 43.4225 25.0433 44 22 44Z" fill="black" fill-opacity="0.44"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+</body>
+</html>

@@ -252,7 +252,12 @@ function setupEventListeners() {
     
     if (voiceBtn) {
         voiceBtn.addEventListener('click', () => {
+<<<<<<< Updated upstream
             alert('Mode aide vocal avec AI en développement');
+=======
+          //  alert('Mode aide vocal avec AI en développement');
+            showChatbotPopup();
+>>>>>>> Stashed changes
         });
     }
     
@@ -647,6 +652,274 @@ function addToCart(product) {
     localStorage.setItem('cart', JSON.stringify(state.cart));
 }
 
+<<<<<<< Updated upstream
+=======
+
+
+
+
+
+
+
+// Fonction pour afficher le popup de chatbot
+function showChatbotPopup() {
+    // Créer le popup
+    const popup = document.createElement('div');
+
+    popup.className = 'fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50';
+    popup.innerHTML = `
+        <div class="bg-white rounded-3xl shadow-lg w-full max-w-[500px] overflow-hidden p-6">
+            <!-- Conversation -->
+            <div id="conversation-container" class="mb-8">
+                <div class="flex items-start gap-3 mb-6">
+                    <div class="w-10 h-10 bg-purple-700 rounded-full flex items-center justify-center overflow-hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                        </svg>
+                    </div>
+                    <div class="bg-gray-200 rounded-2xl rounded-tl-none py-2 px-4 max-w-[80%]">
+                        <p class="text-sm text-gray-700">bonsoir, comment puis je vous aider?</p>
+                    </div>
+                    <span class="text-xs text-gray-400 mt-2">20:38</span>
+                </div>
+            </div>
+
+            <!-- Visualisation d'onde sonore -->
+            <div id="wave-container" class="flex items-end justify-center gap-2 h-32 mb-8">
+                <div class="bg-gray-200 w-4 h-16 rounded-sm"></div>
+                <div class="bg-gray-200 w-4 h-24 rounded-sm"></div>
+                <div class="bg-gray-200 w-4 h-32 rounded-sm"></div>
+                <div class="bg-gray-200 w-4 h-24 rounded-sm"></div>
+                <div class="bg-gray-200 w-4 h-16 rounded-sm"></div>
+            </div>
+
+            <!-- Zone de saisie -->
+            <div class="flex items-center gap-2 mb-4">
+                <div class="flex-1 relative">
+                    <input id="chatbot-input" class="w-full py-3 px-4 pr-10 border border-gray-200 rounded-full focus:outline-none focus:ring-1 focus:ring-gray-300" 
+                        type="text" placeholder="écrire un message ici ou utiliser le vocal pour interagir avec l'AI">
+                    <button id="voice-btn" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                        </svg>
+                    </button>
+                </div>
+                <button id="send-message-btn" class="bg-gray-800 text-white font-medium py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors">
+                    Submit
+                </button>
+            </div>
+
+            <!-- Bouton retour -->
+            <div class="flex justify-center">
+                <button id="close-chatbot-btn" class="flex items-center justify-center gap-2 bg-gray-200 text-gray-700 font-medium py-3 px-6 rounded-lg w-full max-w-md hover:bg-gray-300 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    Retour en arrière
+                </button>
+            </div>
+        </div>
+    `;
+
+    // Ajouter le popup au body
+    document.body.appendChild(popup);
+
+    // Ajouter les écouteurs d'événements
+    const sendMessageBtn = popup.querySelector('#send-message-btn');
+    const closeChatbotBtn = popup.querySelector('#close-chatbot-btn');
+    const chatbotInput = popup.querySelector('#chatbot-input');
+    const voiceBtn = popup.querySelector('#voice-btn');
+    const conversationContainer = popup.querySelector('#conversation-container');
+    const waveContainer = popup.querySelector('#wave-container');
+
+    // Fonction pour ajouter un message à la conversation
+    function addMessage(message, isUser = false) {
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const timeString = `${hours}:${minutes}`;
+        
+        const messageElement = document.createElement('div');
+        messageElement.className = 'flex items-start gap-3 mb-6';
+        
+        if (isUser) {
+            // Message de l'utilisateur (aligné à droite)
+            messageElement.innerHTML = `
+                <span class="text-xs text-gray-400 mt-2 ml-auto">${timeString}</span>
+                <div class="bg-blue-500 text-white rounded-2xl rounded-tr-none py-2 px-4 max-w-[80%] ml-auto">
+                    <p class="text-sm">${message}</p>
+                </div>
+            `;
+        } else {
+            // Message du bot (aligné à gauche)
+            messageElement.innerHTML = `
+                <div class="w-10 h-10 bg-purple-700 rounded-full flex items-center justify-center overflow-hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                    </svg>
+                </div>
+                <div class="bg-gray-200 rounded-2xl rounded-tl-none py-2 px-4 max-w-[80%]">
+                    <p class="text-sm text-gray-700">${message}</p>
+                </div>
+                <span class="text-xs text-gray-400 mt-2">${timeString}</span>
+            `;
+        }
+        
+        conversationContainer.appendChild(messageElement);
+        
+        // Faire défiler vers le bas pour voir le nouveau message
+        messageElement.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Fonction pour simuler l'animation des ondes sonores
+    function animateWaves(isActive = false) {
+        if (isActive) {
+            // Créer une animation d'ondes sonores actives
+            waveContainer.innerHTML = '';
+            const heights = [16, 24, 32, 40, 24, 16];
+            
+            // Créer l'animation
+            const animateWave = () => {
+                waveContainer.innerHTML = '';
+                for (let i = 0; i < 5; i++) {
+                    const height = Math.floor(Math.random() * 40) + 10; // Hauteur aléatoire entre 10 et 50px
+                    const bar = document.createElement('div');
+                    bar.className = `bg-blue-400 w-4 h-${height} rounded-sm transition-all duration-200`;
+                    bar.style.height = `${height}px`;
+                    waveContainer.appendChild(bar);
+                }
+            };
+            
+            // Démarrer l'animation
+            const waveInterval = setInterval(animateWave, 200);
+            return waveInterval;
+        } else {
+            // Remettre les ondes sonores statiques
+            waveContainer.innerHTML = `
+                <div class="bg-gray-200 w-4 h-16 rounded-sm"></div>
+                <div class="bg-gray-200 w-4 h-24 rounded-sm"></div>
+                <div class="bg-gray-200 w-4 h-32 rounded-sm"></div>
+                <div class="bg-gray-200 w-4 h-24 rounded-sm"></div>
+                <div class="bg-gray-200 w-4 h-16 rounded-sm"></div>
+            `;
+            return null;
+        }
+    }
+
+    // Gérer l'envoi du message
+    sendMessageBtn.addEventListener('click', () => {
+        const message = chatbotInput.value.trim();
+        if (message) {
+            // Ajouter le message de l'utilisateur à la conversation
+            addMessage(message, true);
+            
+            // Vider la zone de texte
+            chatbotInput.value = '';
+            
+            // Simuler une réponse du bot après un court délai
+            setTimeout(() => {
+                addMessage("Merci pour votre message. Comment puis-je vous aider davantage?");
+            }, 1000);
+        } else {
+            alert('Veuillez écrire un message avant d\'envoyer.');
+        }
+    });
+
+    // Permettre l'envoi du message avec la touche Entrée
+    chatbotInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            sendMessageBtn.click();
+        }
+    });
+
+    // Gérer l'entrée vocale avec l'API Web Speech
+    let recognition = null;
+    let waveAnimation = null;
+
+    if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+        // Créer l'objet de reconnaissance vocale
+        recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        recognition.lang = 'fr-FR';
+        recognition.continuous = false;
+        recognition.interimResults = false;
+
+        // Configurer les événements de reconnaissance
+        recognition.onstart = function() {
+            // Démarrer l'animation des ondes
+            waveAnimation = animateWaves(true);
+            chatbotInput.placeholder = "Parlez maintenant...";
+            voiceBtn.classList.add('text-blue-500');
+        };
+
+        recognition.onresult = function(event) {
+            const transcript = event.results[0][0].transcript;
+            chatbotInput.value = transcript;
+        };
+
+        recognition.onend = function() {
+            // Arrêter l'animation des ondes
+            if (waveAnimation) {
+                clearInterval(waveAnimation);
+                waveAnimation = null;
+            }
+            animateWaves(false);
+            chatbotInput.placeholder = "écrire un message ici ou utiliser le vocal pour interagir avec l'AI";
+            voiceBtn.classList.remove('text-blue-500');
+        };
+
+        recognition.onerror = function(event) {
+            console.error('Erreur de reconnaissance vocale:', event.error);
+            // Arrêter l'animation des ondes
+            if (waveAnimation) {
+                clearInterval(waveAnimation);
+                waveAnimation = null;
+            }
+            animateWaves(false);
+            chatbotInput.placeholder = "Erreur de reconnaissance vocale. Réessayez.";
+            voiceBtn.classList.remove('text-blue-500');
+        };
+
+        // Gérer le clic sur le bouton du microphone
+        voiceBtn.addEventListener('click', () => {
+            if (waveAnimation) {
+                // Si la reconnaissance est déjà en cours, l'arrêter
+                recognition.stop();
+            } else {
+                // Sinon, démarrer la reconnaissance
+                recognition.start();
+            }
+        });
+    } else {
+        // Le navigateur ne prend pas en charge la reconnaissance vocale
+        voiceBtn.addEventListener('click', () => {
+            alert('Votre navigateur ne prend pas en charge la reconnaissance vocale.');
+        });
+    }
+
+    // Fermer le popup
+    closeChatbotBtn.addEventListener('click', () => {
+        // Arrêter la reconnaissance vocale si elle est en cours
+        if (recognition && waveAnimation) {
+            recognition.stop();
+        }
+        document.body.removeChild(popup);
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> Stashed changes
 // Afficher le popup d'achat
 function showPurchasePopup(product) {
     // Calculer le nombre total d'articles dans le panier
@@ -664,6 +937,11 @@ function showPurchasePopup(product) {
     // Total
     const total = subtotal + shippingCost;
     
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
     // Créer le popup
     const popup = document.createElement('div');
     popup.className = 'fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50';

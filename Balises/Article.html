@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles récents</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:wght@400;700;800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .article-card {
+            transition: all 0.3s ease;
+        }
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <h2 class="text-center text-[#0e204d] text-4xl md:text-5xl lg:text-6xl font-extrabold font-['Ubuntu Sans'] capitalize mb-12">
+            Articles récents
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Article Card 1 -->
+            <div class="article-card bg-white rounded-md overflow-hidden shadow-md">
+                <img src="../assets/images/article.png" alt="Article Image" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <span class="bg-[#21cdc0] text-white text-xs font-normal font-['Roboto'] px-3 py-1 rounded-tr-lg rounded-bl-lg rounded-br-lg">
+                            Life Style, Nutrition
+                        </span>
+                    </div>
+                    <div class="flex items-center text-[#435ba1] text-xs font-normal font-['Roboto'] mb-4">
+                        <span>Jan 28, 2022</span>
+                        <span class="mx-2 w-px h-3 bg-[#dedfe3]"></span>
+                        <span>Saul Wade</span>
+                    </div>
+                    <h3 class="text-[#0e204d] text-xl font-bold font-['Ubuntu Sans'] leading-relaxed mb-4">
+                        Tips for eating healthy when you're working from home
+                    </h3>
+                    <p class="text-[#848e9f] text-sm font-normal font-['Roboto'] leading-normal mb-6">
+                        It's normal to feel anxiety, worry and grief any time you're diagnosed with a condition that's certainly true if you test positive for COVID-19, or are presumed to be positive...
+                    </p>
+                    <a href="#" class="inline-flex items-center text-[#213360] text-sm font-bold font-['Roboto'] capitalize">
+                        Read More
+                        <svg class="ml-2 w-4 h-4" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.2832 6.52002H0.970703V4.90137H8.2832V6.52002ZM8.2832 6.52002L6.02661 8.71948C5.96948 8.77661 5.92664 8.84167 5.89807 8.91467C5.86951 8.98767 5.85522 9.06543 5.85522 9.14795C5.85522 9.26221 5.8822 9.36536 5.93616 9.4574C5.99011 9.54944 6.06152 9.62085 6.15039 9.67163V9.68115C6.18213 9.7002 6.21545 9.71765 6.25037 9.73352C6.28528 9.74939 6.3186 9.76367 6.35034 9.77637H6.35986H6.94067C7.0105 9.75732 7.07397 9.73035 7.1311 9.69543C7.18823 9.66052 7.23901 9.61768 7.28345 9.56689L10.5208 6.16772C10.5461 6.14233 10.5684 6.11536 10.5874 6.08679C10.6064 6.05823 10.6223 6.02808 10.635 5.99634C10.6604 5.9519 10.6826 5.9043 10.7017 5.85352C10.7207 5.80273 10.7302 5.75195 10.7302 5.70117V5.69165C10.7239 5.5647 10.6826 5.44885 10.6064 5.34412C10.5303 5.23938 10.4382 5.16162 10.3303 5.11084H10.3208L7.28345 1.92114C7.20093 1.83862 7.10571 1.77515 6.9978 1.73071C6.88989 1.68628 6.77563 1.66406 6.65503 1.66406C6.55981 1.66406 6.46936 1.67676 6.38367 1.70215C6.29797 1.72754 6.22021 1.76562 6.15039 1.81641C6.06152 1.86719 5.99011 1.94019 5.93616 2.0354C5.8822 2.13062 5.85522 2.23218 5.85522 2.34009C5.85522 2.42261 5.86951 2.50195 5.89807 2.57812C5.92664 2.6543 5.96948 2.71777 6.02661 2.76855L8.2832 4.90137V6.52002Z" fill="#213360"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Article Card 2 (Duplicate of Card 1 for demonstration) -->
+            <div class="article-card bg-white rounded-md overflow-hidden shadow-md">
+                <img src="../assets/images/article.png" alt="Article Image" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <span class="bg-[#21cdc0] text-white text-xs font-normal font-['Roboto'] px-3 py-1 rounded-tr-lg rounded-bl-lg rounded-br-lg">
+                            Life Style, Nutrition
+                        </span>
+                    </div>
+                    <div class="flex items-center text-[#435ba1] text-xs font-normal font-['Roboto'] mb-4">
+                        <span>Jan 28, 2022</span>
+                        <span class="mx-2 w-px h-3 bg-[#dedfe3]"></span>
+                        <span>Saul Wade</span>
+                    </div>
+                    <h3 class="text-[#0e204d] text-xl font-bold font-['Ubuntu Sans'] leading-relaxed mb-4">
+                        Tips for eating healthy when you're working from home
+                    </h3>
+                    <p class="text-[#848e9f] text-sm font-normal font-['Roboto'] leading-normal mb-6">
+                        It's normal to feel anxiety, worry and grief any time you're diagnosed with a condition that's certainly true if you test positive for COVID-19, or are presumed to be positive...
+                    </p>
+                    <a href="#" class="inline-flex items-center text-[#213360] text-sm font-bold font-['Roboto'] capitalize">
+                        Read More
+                        <svg class="ml-2 w-4 h-4" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.2832 6.52002H0.970703V4.90137H8.2832V6.52002ZM8.2832 6.52002L6.02661 8.71948C5.96948 8.77661 5.92664 8.84167 5.89807 8.91467C5.86951 8.98767 5.85522 9.06543 5.85522 9.14795C5.85522 9.26221 5.8822 9.36536 5.93616 9.4574C5.99011 9.54944 6.06152 9.62085 6.15039 9.67163V9.68115C6.18213 9.7002 6.21545 9.71765 6.25037 9.73352C6.28528 9.74939 6.3186 9.76367 6.35034 9.77637H6.35986H6.94067C7.0105 9.75732 7.07397 9.73035 7.1311 9.69543C7.18823 9.66052 7.23901 9.61768 7.28345 9.56689L10.5208 6.16772C10.5461 6.14233 10.5684 6.11536 10.5874 6.08679C10.6064 6.05823 10.6223 6.02808 10.635 5.99634C10.6604 5.9519 10.6826 5.9043 10.7017 5.85352C10.7207 5.80273 10.7302 5.75195 10.7302 5.70117V5.69165C10.7239 5.5647 10.6826 5.44885 10.6064 5.34412C10.5303 5.23938 10.4382 5.16162 10.3303 5.11084H10.3208L7.28345 1.92114C7.20093 1.83862 7.10571 1.77515 6.9978 1.73071C6.88989 1.68628 6.77563 1.66406 6.65503 1.66406C6.55981 1.66406 6.46936 1.67676 6.38367 1.70215C6.29797 1.72754 6.22021 1.76562 6.15039 1.81641C6.06152 1.86719 5.99011 1.94019 5.93616 2.0354C5.8822 2.13062 5.85522 2.23218 5.85522 2.34009C5.85522 2.42261 5.86951 2.50195 5.89807 2.57812C5.92664 2.6543 5.96948 2.71777 6.02661 2.76855L8.2832 4.90137V6.52002Z" fill="#213360"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>PharmaCom</title>
+    <!-- Import Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="output.css"/>
+    <!-- Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<div class="relative w-full min-h-screen">
+
+    
+   
+        <style>
+            .background-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1939309.png-5J5VQ1RfPcMSLZUW3phS1k3NwuLPls.webp');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 60% auto;
+                background-attachment: fixed;
+                opacity: 0.4;
+                z-index: -1; /* Keep it behind other content */
+            }   
+        </style>
+    
+        <div class="background-overlay"></div>
+
+    <!-- Navbar -->
+    <header class="border-b bg-background">
+        <div id="navbar"></div>
+    </header>
+
+        <div id="firstpart"></div>
+        <div id="secondpart" class="w-full h-screen flex justify-center items-center"></div>
+        <div id="thirdpart" class=" flex justify-center items-center"></div>
+        <div id="fourthpart" class="flex justify-center items-center my-10 py-12"></div>
+        <div id="footer"></div>
+    </div>
+</div>
+
+<script>
+    // Importation dynamique du navbar
+    fetch('/NavBar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar').innerHTML = data;
+        });
+
+    // Importation dynamique du footer
+    fetch('/Footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer').innerHTML = data;
+        });
+
+    // Importation dynamique du first part
+    fetch('/Balises/FirstPart.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('firstpart').innerHTML = data;
+        });
+    fetch('/Balises/SecondPart.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('secondpart').innerHTML = data;
+        });
+    fetch('/Balises/ThirdPart.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('thirdpart').innerHTML = data;
+        });
+    fetch('/Balises/Article.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('fourthpart').innerHTML = data;
+        });
+</script>
+</body>
+</html>
