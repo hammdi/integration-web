@@ -14,7 +14,7 @@
         <!-- Contenu principal -->
         <main class="w-full bg-white p-4 rounded-xl shadow-custom">
             <section class="ordonnance-section mb-6 text-center">
-                <button class="bg-sidebar text-primary py-2 px-4 rounded-md hover:bg-primary hover:text-white transition-colors">Ajouter au panier automatique</button>
+                <button id="auto-add-to-cart" class="bg-sidebar text-primary py-2 px-4 rounded-md hover:bg-primary hover:text-white transition-colors">Ajouter au panier automatique</button>
                 <h1 class="text-2xl font-bold text-primary mt-4">Votre Ordonnance</h1>
                 <div class="ordonnance-container mt-4">
                     <img src="assets\images\ordanance-exemple.png" alt="Ordonnance" class="w-1/2 h-auto mx-auto">
@@ -65,6 +65,10 @@
     // Charger la navbar et le footer
     loadComponent("navbar-container", "NavBar.html");
     loadComponent("footer-container", "Footer.html");
+
+    document.getElementById('auto-add-to-cart').addEventListener('click', function() {
+        window.location.href = 'auto-add-to-cart.html';
+    });
     </script>
 </body>
 </html>
