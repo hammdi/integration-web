@@ -716,13 +716,10 @@ video {
   margin-top: 3rem;
 }
 
-<<<<<<< Updated upstream
-=======
 .mt-2 {
   margin-top: 0.5rem;
 }
 
->>>>>>> Stashed changes
 .mt-3 {
   margin-top: 0.75rem;
 }
@@ -767,17 +764,12 @@ video {
   display: grid;
 }
 
-<<<<<<< Updated upstream
-.hidden {
-  display: none;
-=======
 .h-10 {
   height: 2.5rem;
 }
 
 .h-16 {
   height: 4rem;
->>>>>>> Stashed changes
 }
 
 .h-20 {
@@ -788,13 +780,10 @@ video {
   height: 6rem;
 }
 
-<<<<<<< Updated upstream
-=======
 .h-32 {
   height: 8rem;
 }
 
->>>>>>> Stashed changes
 .h-4 {
   height: 1rem;
 }
@@ -819,13 +808,10 @@ video {
   height: 2rem;
 }
 
-<<<<<<< Updated upstream
-=======
 .h-screen {
   height: 100vh;
 }
 
->>>>>>> Stashed changes
 .min-h-screen {
   min-height: 100vh;
 }
@@ -878,19 +864,14 @@ video {
   max-width: 56rem;
 }
 
-<<<<<<< Updated upstream
-=======
 .max-w-\[500px\] {
   max-width: 500px;
 }
 
->>>>>>> Stashed changes
 .max-w-\[600px\] {
   max-width: 600px;
 }
 
-<<<<<<< Updated upstream
-=======
 .max-w-\[80\%\] {
   max-width: 80%;
 }
@@ -899,7 +880,6 @@ video {
   max-width: 28rem;
 }
 
->>>>>>> Stashed changes
 .max-w-screen-xl {
   max-width: 1280px;
 }
@@ -1033,8 +1013,6 @@ video {
   border-radius: 1rem;
 }
 
-<<<<<<< Updated upstream
-=======
 .rounded-3xl {
   border-radius: 1.5rem;
 }
@@ -1043,7 +1021,6 @@ video {
   border-radius: 9999px;
 }
 
->>>>>>> Stashed changes
 .rounded-lg {
   border-radius: 0.5rem;
 }
@@ -1137,8 +1114,6 @@ video {
   background-color: rgb(0 0 0 / 0.6);
 }
 
-<<<<<<< Updated upstream
-=======
 .bg-blue-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
@@ -1149,7 +1124,6 @@ video {
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
->>>>>>> Stashed changes
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
@@ -1179,14 +1153,11 @@ video {
   background-color: rgb(97 169 185 / var(--tw-bg-opacity));
 }
 
-<<<<<<< Updated upstream
-=======
 .bg-purple-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(126 34 206 / var(--tw-bg-opacity));
 }
 
->>>>>>> Stashed changes
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1409,14 +1380,11 @@ video {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
-<<<<<<< Updated upstream
-=======
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 
->>>>>>> Stashed changes
 .text-blue-600 {
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity));
@@ -1427,27 +1395,16 @@ video {
   color: rgb(24 119 242 / var(--tw-text-opacity));
 }
 
-<<<<<<< Updated upstream
-.text-gray-100 {
-  --tw-text-opacity: 1;
-  color: rgb(243 244 246 / var(--tw-text-opacity));
-}
-
-=======
->>>>>>> Stashed changes
 .text-gray-200 {
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity));
 }
 
-<<<<<<< Updated upstream
-=======
 .text-gray-400 {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
->>>>>>> Stashed changes
 .text-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
@@ -1595,13 +1552,10 @@ video {
   transition-duration: 150ms;
 }
 
-<<<<<<< Updated upstream
-=======
 .duration-200 {
   transition-duration: 200ms;
 }
 
->>>>>>> Stashed changes
 .duration-300 {
   transition-duration: 300ms;
 }
@@ -1669,15 +1623,12 @@ video {
   outline-offset: 2px;
 }
 
-<<<<<<< Updated upstream
-=======
 .focus\:ring-1:focus {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 
->>>>>>> Stashed changes
 .focus\:ring-2:focus {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
@@ -1689,14 +1640,11 @@ video {
   --tw-ring-color: rgb(175 227 241 / var(--tw-ring-opacity));
 }
 
-<<<<<<< Updated upstream
-=======
 .focus\:ring-gray-300:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(209 213 219 / var(--tw-ring-opacity));
 }
 
->>>>>>> Stashed changes
 @media (min-width: 640px) {
   .sm\:mb-6 {
     margin-bottom: 1.5rem;

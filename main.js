@@ -252,12 +252,8 @@ function setupEventListeners() {
     
     if (voiceBtn) {
         voiceBtn.addEventListener('click', () => {
-<<<<<<< Updated upstream
-            alert('Mode aide vocal avec AI en développement');
-=======
           //  alert('Mode aide vocal avec AI en développement');
             showChatbotPopup();
->>>>>>> Stashed changes
         });
     }
     
@@ -652,8 +648,6 @@ function addToCart(product) {
     localStorage.setItem('cart', JSON.stringify(state.cart));
 }
 
-<<<<<<< Updated upstream
-=======
 
 
 
@@ -919,7 +913,6 @@ function showChatbotPopup() {
 
 
 
->>>>>>> Stashed changes
 // Afficher le popup d'achat
 function showPurchasePopup(product) {
     // Calculer le nombre total d'articles dans le panier
@@ -937,11 +930,8 @@ function showPurchasePopup(product) {
     // Total
     const total = subtotal + shippingCost;
     
-<<<<<<< Updated upstream
-=======
 
 
->>>>>>> Stashed changes
     // Créer le popup
     const popup = document.createElement('div');
     popup.className = 'fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50';
