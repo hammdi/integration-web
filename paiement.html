@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paiement - PharmaCom</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 </head>
 <body class="bg-gray-100 flex flex-col min-h-screen font-sans">
     <header class="border-b">
@@ -12,84 +13,88 @@
     </header>
 
     <!-- Main Content with Background Image -->
-    <main class="max-w-screen-xl mx-auto w-full px-4 sm:px-6 py-12 my-8 relative">
-        <!-- Background Image -->
-        <div class="absolute inset-0 bg-no-repeat bg-center bg-cover opacity-50 pointer-events-none"
-             style="background-image: url('./assets/images/taswira eli fi wost el page el khayba.png');">
+    <main class="flex-1 relative">
+            <!-- Background Image -->
+        <div class="absolute inset-0 bg-no-repeat bg-center bg-contain opacity-50 pointer-events-none"
+            style="background-image: url('./assets/images/taswira\ eli\ fi\ wost\ el\ page\ el\ khayba.png');">
         </div>
 
         <!-- Content Container -->
-        <div class="relative z-10 bg-white p-8 sm:p-10 rounded-xl shadow-custom">
-            <!-- Top Section: Order Confirmation -->
-            <div class="flex items-center gap-5 mb-8">
-                <img src="./assets/images/tick mark.png" alt="tick mark" class="w-24 h-24 object-contain">
-                <div>
-                    <div class="text-xl font-bold">Commande 131217312</div>
-                    <div class="text-2xl font-bold text-green-600">Merci pour vos achats</div>
-                </div>
-            </div>
-
-            <!-- Middle Section: Order Details and Address Information -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                <!-- Left Side: Order Details -->
-                <div>
-                    <h2 class="text-lg font-bold mb-2">Votre commande est confirmée</h2>
-                    <p class="mb-4">Nous avons accepté votre commande et nous la préparons.</p>
-                    <h2 class="text-lg font-bold mb-2">Méthode d’expédition</h2>
-                    <p class="mb-4">UPS Ground (Estimated ship time of 3-6 days)</p>
-                    <h2 class="text-lg font-bold mb-2">Mode de paiement</h2>
-                    <p><strong>VISA</strong> Ending in 3217 - $23.60</p>
-                </div>
-
-                <!-- Right Side: Address Information -->
-                <div class="ml-auto">
-                    <h2 class="text-lg font-bold mb-4">Informations complémentaires</h2>
-                    <div class="space-y-2">
-                        <p><strong>Adresse de livraison :</strong> <br>
-                            <a href="#" class="text-blue-600 underline">Kenny Bostick <br> 
-                            12 Waldo Point Road, Mishauken, NY 11200</a>
-                        </p>
-                        <p><strong>Adresse de facturation :</strong> <br>
-                            <a href="#" class="text-blue-600 underline">Kenny Bostick <br> 
-                            12 Waldo Point Road, Mishauken, NY 11200</a>
-                        </p>
+        <div class="relative z-10 max-w-screen-xl mx-auto w-full px-4 sm:px-6 py-12 my-8">
+            <div class="bg-white p-8 sm:p-10 rounded-xl shadow-custom">
+                <!-- Top Section: Order Confirmation -->
+                <div class="flex items-center gap-5 mb-8">
+                    <img src="./assets/images/tick mark.png" alt="tick mark" class="w-24 h-24 object-contain">
+                    <div>
+                        <div class="text-xl font-bold">Commande 131217312</div>
+                        <div class="text-2xl font-bold text-green-600">Merci pour vos achats</div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Bottom Section: Order Summary -->
-            <div class="bg-gray-100 p-6 rounded-xl shadow-custom">
-                <h2 class="text-lg font-bold mb-4">Résumé (1 article)</h2>
-                <table class="w-full mb-4">
-                    <tr class="border-b border-gray-200">
-                        <td class="py-2">Sous-total</td>
-                        <td class="text-right py-2"><strong>24.75 TND</strong></td>
-                    </tr>
-                    <tr class="border-b border-gray-200">
-                        <td class="py-2">Expédition</td>
-                        <td class="text-right py-2"><strong>6 TND</strong></td>
-                    </tr>
-                    <tr class="border-b border-gray-200">
-                        <td class="py-2">TVA</td>
-                        <td class="text-right py-2"><strong>7.25 TND</strong></td>
-                    </tr>
-                    <tr class="text-lg font-bold">
-                        <td class="py-2">Total</td>
-                        <td class="text-right py-2"><strong>38 TND</strong></td>
-                    </tr>
-                </table>
-                <div class="flex flex-col sm:flex-row items-center gap-2 mb-4">
-                    <input type="text" class="w-full sm:flex-1 p-2 rounded border border-gray-300" placeholder="code de réduction">
-                    <button class="w-full sm:w-auto bg-accent hover:bg-accent/90 px-6 py-2 rounded-xl font-bold transition-colors">Appliquer</button>
+                <!-- Middle Section: Order Details and Address Information -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <!-- Left Side: Order Details -->
+                    <div>
+                        <h2 class="text-lg font-bold mb-2">Votre commande est confirmée</h2>
+                        <p class="mb-4">Nous avons accepté votre commande et nous la préparons.</p>
+                        <h2 class="text-lg font-bold mb-2">Méthode d’expédition</h2>
+                        <p class="mb-4">UPS Ground (Estimated ship time of 3-6 days)</p>
+                        <h2 class="text-lg font-bold mb-2">Mode de paiement</h2>
+                        <p><strong>VISA</strong> Ending in 3217 - $23.60</p>
+                    </div>
+
+                    <!-- Right Side: Address Information -->
+                    <div class="ml-auto">
+                        <h2 class="text-lg font-bold mb-4">Informations complémentaires</h2>
+                        <div class="space-y-2">
+                            <p><strong>Adresse de livraison :</strong> <br>
+                                <a href="#" class="text-blue-600 underline">Kenny Bostick <br> 
+                                12 Waldo Point Road, Mishauken, NY 11200</a>
+                            </p>
+                            <p><strong>Adresse de facturation :</strong> <br>
+                                <a href="#" class="text-blue-600 underline">Kenny Bostick <br> 
+                                12 Waldo Point Road, Mishauken, NY 11200</a>
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <button class="w-full bg-accent hover:bg-accent/90 px-6 py-2 rounded-xl font-bold transition-colors">Confirmer</button>
+
+                <!-- Bottom Section: Order Summary -->
+                <div class="bg-gray-100 p-6 rounded-xl shadow-custom">
+                    <h2 class="text-lg font-bold mb-4">Résumé (1 article)</h2>
+                    <table class="w-full mb-4">
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2">Sous-total</td>
+                            <td class="text-right py-2"><strong>24.75 TND</strong></td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2">Expédition</td>
+                            <td class="text-right py-2"><strong>6 TND</strong></td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2">TVA</td>
+                            <td class="text-right py-2"><strong>7.25 TND</strong></td>
+                        </tr>
+                        <tr class="text-lg font-bold">
+                            <td class="py-2">Total</td>
+                            <td class="text-right py-2"><strong>38 TND</strong></td>
+                        </tr>
+                    </table>
+                    <div class="flex flex-col sm:flex-row items-center gap-2 mb-4">
+                        <input type="text" class="w-full sm:flex-1 p-2 rounded border border-gray-300" placeholder="code de réduction">
+                        <button class="w-full sm:w-auto bg-accent hover:bg-accent/90 px-6 py-2 rounded-xl font-bold transition-colors">Appliquer</button>
+                    </div>
+                    <button class="w-full bg-accent hover:bg-accent/90 px-6 py-2 rounded-xl font-bold transition-colors">Confirmer</button>
+                </div>
             </div>
         </div>
     </main>
 
+    <!-- Footer -->
     <footer class="mt-8">
         <div id="footer-container"></div>
     </footer>
+
     <script>
         function loadComponent(containerId, filePath) {
             fetch(filePath)
@@ -102,4 +107,3 @@
     </script>
 </body>
 </html>
-
