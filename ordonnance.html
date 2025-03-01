@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre Ordonnance</title>
+    <link rel="stylesheet" href="./output.css">
+</head>
+<body class="bg-background relative">
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+    <div class="container mx-auto flex flex-col md:flex-row mt-6">
+        <!-- Contenu principal -->
+        <main class="w-full bg-white p-4 rounded-xl shadow-custom">
+            <section class="ordonnance-section mb-6 text-center">
+                <button class="bg-sidebar text-primary py-2 px-4 rounded-md hover:bg-primary hover:text-white transition-colors">Ajouter au panier automatique</button>
+                <h1 class="text-2xl font-bold text-primary mt-4">Votre Ordonnance</h1>
+                <div class="ordonnance-container mt-4">
+                    <img src="assets\images\ordanance-exemple.png" alt="Ordonnance" class="w-1/2 h-auto mx-auto">
+                </div>
+                <button class="bg-sidebar text-primary py-2 px-4 rounded-md hover:bg-primary hover:text-white transition-colors mt-4">Commander Rapidement</button>
+            </section>
+
+            <section class="medications">
+                <h2 class="text-xl font-semibold text-primary mb-4">Medicaments de l'ordonnance</h2>
+                <div class="medication-list grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="medication-item bg-white rounded-lg shadow-custom overflow-hidden">
+                        <div class="relative">
+                            <img src="assets\images\hexomedine.jpg" alt="Medicament 1" class="w-full h-48 object-contain p-2">
+                            <span class="absolute top-2 right-2 bg-primary text-white px-2 py-1 rounded-md text-sm">8,25 TND</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">Donormyl (15mg) / 10 comprimés / EXP 12 2023</h3>
+                            <p class="text-sm text-gray-600 mb-2">Donormyl est un médicament contenant du doxylamine...</p>
+                            <div class="flex justify-between items-center mb-2">
+                                <p class="text-sm">
+                                    <span class="font-semibold">Disponibilité:</span>
+                                    <span class="text-green-600">En Stock</span>
+                                </p>
+                            </div>
+                            <button class="bg-white border border-primary text-primary px-3 py-1 rounded-md text-sm hover:bg-primary hover:text-white transition-colors">Commander</button>
+                        </div>
+                    </div>
+                    <!-- Repeat similar blocks for other medications -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <script type="module" src="main.js"></script>
+
+    <script>
+    // Fonction pour charger un fichier HTML dans un élément spécifique
+    function loadComponent(containerId, filePath) {
+        fetch(filePath)
+            .then(response => response.text())
+            .then(data => document.getElementById(containerId).innerHTML = data)
+            .catch(error => console.error(`Erreur lors du chargement de ${filePath}:`, error));
+    }
+
+    // Charger la navbar et le footer
+    loadComponent("navbar-container", "NavBar.html");
+    loadComponent("footer-container", "Footer.html");
+    </script>
+</body>
+</html>

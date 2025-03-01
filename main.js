@@ -1,4 +1,3 @@
-
 import medications from './data.js';
 
 // État de l'application
@@ -222,7 +221,35 @@ function setupEventListeners() {
     
     // Boutons de fonctionnalité
     scanBtn.addEventListener('click', () => {
-        alert('Fonctionnalité de scan d\'ordonnance en développement');
+        document.body.insertAdjacentHTML('beforeend', `
+            <div id="modal-overlay" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+                <div class="modal bg-white p-6 rounded-lg shadow-lg w-11/12 md:w-1/2 lg:w-1/3">
+                    <h2 class="text-xl font-bold mb-4">Importer un fichier PDF ou image de l'ordonnance</h2>
+                    <p class="mb-4">Message d'acceptation des politiques de confidentialité :</p>
+                    <p class="text-sm text-gray-700 mb-4">En continuant à utiliser notre application, vous acceptez nos Politiques de Confidentialité. Nous nous engageons à protéger vos données personnelles et à les utiliser conformément à nos conditions. Vous pouvez consulter les détails de nos politiques <a href="#" class="text-blue-500 underline">[ici]</a>. Si vous êtes d'accord, cliquez sur "Accepter" pour continuer.</p>
+                    <div class="checkbox-container flex items-center mb-4">
+                        <input type="checkbox" id="accept-checkbox" class="mr-2">
+                        <label for="accept-checkbox" class="text-sm">Cliquez sur accepter avant importer</label>
+                    </div>
+                    <div class="flex justify-between">
+                        <button id="import-btn" class="btn btn-primary bg-gray-300 text-gray-700 px-4 py-2 rounded-md" disabled>📂 Importer</button>
+                        <button id="close-modal" class="btn btn-secondary bg-gray-200 text-gray-700 px-4 py-2 rounded-md">❌ Retour en arrière</button>
+                    </div>
+                </div>
+            </div>
+        `);
+    
+        document.getElementById('accept-checkbox').addEventListener('change', function() {
+            document.getElementById('import-btn').disabled = !this.checked;
+        });
+    
+        document.getElementById('close-modal').addEventListener('click', () => {
+            document.getElementById('modal-overlay').remove();
+        });
+
+        document.getElementById('import-btn').addEventListener('click', () => {
+            window.location.href = 'ordonnance.html';
+        });
     });
     
     voiceBtn.addEventListener('click', () => {
