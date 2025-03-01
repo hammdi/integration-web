@@ -4,70 +4,254 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panier - Pharmacom</title>
+    <link rel="stylesheet" href="./output.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <style>
+        #menu.flex {
+            display: flex;
+            position: absolute;
+            background: white;
+            width: 100%;
+            left: 0;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="./assets/images/image-ai-brush-removebg-7b2rsrbsl (1).png" alt="Pharmacom" width="10%">
-            </div>
-            <ul>
-                <li><a href="#">ACCUEIL</a></li>
-                <li><a href="#">LISTES</a></li>
-                <li><a href="#">VOIR MAP</a></li>
-                <li><a href="#"><img src="./assets/images/icons8-paramètres-50.png" alt="Settings"></a></li>
-                <li><a href="#"><img src="./assets/images/shopping_cart_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="Cart"></a></li>
-            </ul>
-        </nav>
+<body class="bg-background text-gray-900 flex flex-col min-h-screen">
+    <!-- Navbar -->
+    <header class="border-b relative z-40">
+        <div id="navbar-container"></div>
     </header>
-    <main>
-        <h2>PANIER :</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Produit</th>
-                    <th>Prix Unitaire</th>
-                    <th>QTY</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><img src="./assets/images/pack_3d_donormyl_cps_pelli_janvier_2023.png" alt="Medicament 1" width="25%"> Domoryl (15mg) / 10 comprimés</td>
-                    <td>6.25 TND</td>
-                    <td>2</td>
-                    <td>12.5 TND</td>
-                </tr>
-                <tr>
-                    <td><img src="./assets/images/pack_3d_donormyl_cps_pelli_janvier_2023.png" alt="Medicament 2" width="25%"> Domoryl (15mg) / 10 comprimés</td>
-                    <td>16.32 TND</td>
-                    <td>1</td>
-                    <td>16.32 TND</td>
-                </tr>
-                <tr>
-                    <td><img src="./assets/images/pack_3d_donormyl_cps_pelli_janvier_2023.png" alt="Medicament 3" width="25%"> Domoryl (15mg) / 10 comprimés</td>
-                    <td>22.25 TND</td>
-                    <td>1</td>
-                    <td>22.25 TND</td>
-                </tr>
-            </tbody>
-        </table>
-        <div>
-            <p><strong>TOTAL TTC:</strong> <span>55.07 TND</span></p>
-            <button>Confirmer</button>
+    
+    <main class="flex-1 relative w-full">
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-no-repeat bg-center bg-contain opacity-50 pointer-events-none"
+             style="background-image: url('./assets/images/taswira\ eli\ fi\ wost\ el\ page\ el\ khayba.png');">
+        </div>
+        <!-- Cart Content -->
+        <div class="relative z-10 max-w-screen-xl mx-auto px-4 sm:px-6 py-6">
+            <!-- Cart Block -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <h2 class="text-xl font-semibold p-4 bg-gray-50 border-b border-gray-200 uppercase">PANIER :</h2>
+                
+                <!-- Cart Table -->
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse">
+                        <thead class="bg-gray-100 bg-[#E0E0E0] bg-opacity-20">
+                            <tr>
+                                <th class="text-left py-3 px-4 font-medium text-gray-100">Produit</th>
+                                <th class="text-center py-3 px-4 font-medium text-gray-100">Prix Unitaire</th>
+                                <th class="text-center py-3 px-4 font-medium text-gray-100">QTY</th>
+                                <th class="text-center py-3 px-4 font-medium text-gray-100">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-t border-gray-200">
+                                <td class="py-6 px-4">
+                                    <div class="flex items-start gap-4 sm:gap-6">
+                                        <img src="./assets/images/pack_3d_donormyl_cps_pelli_janvier_2023.png" 
+                                             alt="Medicament 1" 
+                                             class="w-20 h-20 sm:w-32 sm:h-32 object-contain">
+                                        <div class="flex flex-col gap-2">
+                                            <h3 class="font-medium text-base sm:text-lg">Donormyl (15mg) / 10 comprimés / EXP 12 2023</h3>
+                                            <p class="text-xs sm:text-sm text-gray-600">
+                                                Donormyl est un médicament contenant de la doxylamine, un antihistaminique H1 à propriétés sédatives. Il est principalement utilisé pour traiter l'insomnie occasionnelle chez l'adulte en favorisant l'endormissement.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-6 px-4">
+                                    <div class="flex items-center justify-center gap-1">
+                                        <span class="font-bold text-base sm:text-lg">8,25</span>
+                                        <span class="font-bold text-base sm:text-lg">TND</span>
+                                    </div>
+                                </td>
+                                <td class="py-6 px-4">
+                                    <div class="flex justify-center">
+                                        <div class="inline-flex items-center justify-center border border-gray-300 rounded-md bg-gray-50">
+                                            <button class="px-2 sm:px-3 py-1 text-gray-500 hover:bg-gray-100">-</button>
+                                            <span class="px-2 sm:px-4 py-1 font-medium">2</span>
+                                            <button class="px-2 sm:px-3 py-1 text-gray-500 hover:bg-gray-100">+</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-6 px-4">
+                                    <div class="flex items-center justify-center gap-1">
+                                        <span class="font-bold text-base sm:text-lg">16,50</span>
+                                        <span class="font-bold text-base sm:text-lg">TND</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Repeat similar structure for other products -->
+                            <tr class="border-t border-gray-200">
+                                <td class="py-6 px-4">
+                                    <div class="flex items-start gap-4 sm:gap-6">
+                                        <img src="./assets/images/doliprane.jpg" 
+                                             alt="Medicament 2" 
+                                             class="w-20 h-20 sm:w-32 sm:h-32 object-contain">
+                                        <div class="flex flex-col gap-2">
+                                            <h3 class="font-medium text-base sm:text-lg">Donormyl (15mg) / 10 comprimés / EXP 12 2023</h3>
+                                            <p class="text-xs sm:text-sm text-gray-600">
+                                                Donormyl est un médicament contenant de la doxylamine, un antihistaminique H1 à propriétés sédatives. Il est principalement utilisé pour traiter l'insomnie occasionnelle chez l'adulte en favorisant l'endormissement.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-6 px-4">
+                                    <div class="flex items-center justify-center gap-1">
+                                        <span class="font-bold text-base sm:text-lg">16,32</span>
+                                        <span class="font-bold text-base sm:text-lg">TND</span>
+                                    </div>
+                                </td>
+                                <td class="py-6 px-4">
+                                    <div class="flex justify-center">
+                                        <div class="inline-flex items-center justify-center border border-gray-300 rounded-md bg-gray-50">
+                                            <button class="px-2 sm:px-3 py-1 text-gray-500 hover:bg-gray-100">-</button>
+                                            <span class="px-2 sm:px-4 py-1 font-medium">1</span>
+                                            <button class="px-2 sm:px-3 py-1 text-gray-500 hover:bg-gray-100">+</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-6 px-4">
+                                    <div class="flex items-center justify-center gap-1">
+                                        <span class="font-bold text-base sm:text-lg">16,32</span>
+                                        <span class="font-bold text-base sm:text-lg">TND</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-gray-200">
+                                <td class="py-6 px-4">
+                                    <div class="flex items-start gap-4 sm:gap-6">
+                                        <img src="./assets/images/Aeronide.png" 
+                                             alt="Medicament 3" 
+                                             class="w-20 h-20 sm:w-32 sm:h-32 object-contain">
+                                        <div class="flex flex-col gap-2">
+                                            <h3 class="font-medium text-base sm:text-lg">Donormyl (15mg) / 10 comprimés / EXP 12 2023</h3>
+                                            <p class="text-xs sm:text-sm text-gray-600">
+                                                Donormyl est un médicament contenant de la doxylamine, un antihistaminique H1 à propriétés sédatives. Il est principalement utilisé pour traiter l'insomnie occasionnelle chez l'adulte en favorisant l'endormissement.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-6 px-4">
+                                    <div class="flex items-center justify-center gap-1">
+                                        <span class="font-bold text-base sm:text-lg">22,25</span>
+                                        <span class="font-bold text-base sm:text-lg">TND</span>
+                                    </div>
+                                </td>
+                                <td class="py-6 px-4">
+                                    <div class="flex justify-center">
+                                        <div class="inline-flex items-center justify-center border border-gray-300 rounded-md bg-gray-50">
+                                            <button class="px-2 sm:px-3 py-1 text-gray-500 hover:bg-gray-100">-</button>
+                                            <span class="px-2 sm:px-4 py-1 font-medium">1</span>
+                                            <button class="px-2 sm:px-3 py-1 text-gray-500 hover:bg-gray-100">+</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-6 px-4">
+                                    <div class="flex items-center justify-center gap-1">
+                                        <span class="font-bold text-base sm:text-lg">22,25</span>
+                                        <span class="font-bold text-base sm:text-lg">TND</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Total TTC Section -->
+                <div class="flex justify-between items-center bg-[#E0E0E0] bg-opacity-20 py-4 px-6">
+                    <div class="font-semibold text-gray-800 text-xl sm:text-2xl">TOTAL TTC</div>
+                    <div class="flex items-center gap-1 text-red-600">
+                        <span class="font-bold text-2xl sm:text-3xl">55,07</span>
+                        <span class="font-bold text-2xl sm:text-3xl">TND</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Confirm Button Section - Outside the block -->
+            <div class="flex justify-end mt-4">
+                <button class="bg-accent hover:bg-accent/90 text-black font-medium py-2 px-6 sm:px-8 rounded-md transition-colors">
+                    Confirmer
+                </button>
+            </div>
         </div>
     </main>
-    <footer>
-        <div>
-            <img src="./assets/images/image-ai-brush-removebg-7b2rsrbsl (1).png" alt="Pharmacom" width="10%">
-            <p>All rights not reserved</p>
-            <img src="./assets/images/payment 2.png" alt="Payment Methods">
-        </div>
-        <div>
-            <p>Inscrivez-vous à la newsletter Pharmacom</p>
-            <input type="email" placeholder="Saisissez votre email">
-            <button>S'abonner</button>
-        </div>
-    </footer>
+    
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <script>
+        // Load components
+        function loadComponent(containerId, filePath) {
+            fetch(filePath)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(containerId).innerHTML = data;
+                    
+                    // Initialize mobile menu after navbar is loaded
+                    if (containerId === 'navbar-container') {
+                        initializeMobileMenu();
+                    }
+                })
+                .catch(error => console.error(`Erreur lors du chargement de ${filePath}:`, error));
+        }
+        
+        // Load navbar and footer
+        loadComponent("navbar-container", "NavBar.html");
+        loadComponent("footer-container", "Footer.html");
+        
+        // Initialize mobile menu functionality
+        function initializeMobileMenu() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const menu = document.getElementById('menu');
+            
+            if (menuToggle && menu) {
+                menuToggle.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    menu.classList.toggle('hidden');
+                    menu.classList.toggle('flex');
+                    
+                    // Toggle hamburger icon
+                    const icon = menuToggle.querySelector('i');
+                    if (menu.classList.contains('hidden')) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    } else {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    }
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (menu && 
+                        !menu.contains(e.target) && 
+                        !menuToggle.contains(e.target) && 
+                        !menu.classList.contains('hidden')) {
+                        menu.classList.add('hidden');
+                        menu.classList.remove('flex');
+                        
+                        // Reset hamburger icon
+                        const icon = menuToggle.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            }
+        }
+    </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+

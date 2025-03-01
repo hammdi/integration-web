@@ -3,56 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comparaison - Pharmacom</title>
+    <title>Comparer-PharmaCom</title>
+    <link rel="stylesheet" href="./output.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 </head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="./assets/images/image-ai-brush-removebg-7b2rsrbsl (1).png" alt="Pharmacom" width="10%">
-            </div>
-            <ul>
-                <li><a href="#">ACCUEIL</a></li>
-                <li><a href="#">LISTES</a></li>
-                <li><a href="#">VOIR MAP</a></li>
-                <li><a href="#"><img src="./assets/images/icons8-paramètres-50.png" alt="Settings"></a></li>
-                <li><a href="#"><img src="./assets/images/shopping_cart_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="Cart"></a></li>
-            </ul>
-        </nav>
+<body class="bg-background flex flex-col min-h-screen">
+    <!-- Navbar -->
+    <header class="border-b">
+        <div id="navbar-container"></div>
     </header>
-    <main>
-        <h2>Liste Comparer</h2>
-        <section class="compare-container">
-            <div class="product">
-                <img src="./assets/images/pack_3d_donormyl_cps_pelli_janvier_2023.png" alt="Donormyl" width="15%">
-                <p><strong>Donormyl (15mg) / 10 comprimés / EXP 12 2023</strong></p>
-                <p>Donormyl est un médicament contenant du doxylamine, un antihistaminique H1 à propriétés sédatives...</p>
-                <p><strong>En Stock</strong></p>
-                <p><strong>8,25 TND</strong></p>
-                <button>🛒</button>
+    
+    <main class="flex-1 py-4 sm:py-8 px-2 sm:px-4 relative">
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-no-repeat bg-center bg-contain opacity-50 pointer-events-none"
+             style="background-image: url('./assets/images/taswira\ eli\ fi\ wost\ el\ page\ el\ khayba.png');">
+        </div>
+        
+        <div class="max-w-4xl mx-auto relative">
+            <div class="bg-white rounded-xl shadow-custom p-4 sm:p-8">
+                <h1 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-left">Liste Comparer</h1>
+                
+                <div class="bg-gray-50 rounded-xl p-3 sm:p-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                        <!-- First Product Card -->
+                        <div class="bg-white p-4 sm:p-6 rounded-xl shadow-custom relative">
+                            <button class="absolute right-2 top-2 hover:bg-accent p-1 rounded transition-colors">✕</button>
+                            
+                            <div class="flex flex-col">
+                                <img src="./assets/images/pack_3d_donormyl_cps_pelli_janvier_2023.png" alt="Donormyl" class="w-32 sm:w-40 mx-auto mb-4">
+                                <h3 class="font-bold text-sm text-left mb-2">
+                                    Donormyl (15mg) / 10 comprimés / EXP 12 2024
+                                </h3>
+                                <p class="text-sm text-gray-600 text-left mb-4">
+                                    Donormyl est un médicament contenant du doxylamine, un antihistaminique H1 à propriétés sédatives...
+                                </p>
+                                <p class="font-semibold text-green-600 mb-1 text-left">En Stock</p>
+                                <p class="font-bold text-lg mb-2 text-left">8,25 TND</p>
+                                
+                                <button class="absolute bottom-4 right-4 bg-accent p-2 rounded-md shadow-md hover:shadow-lg transition-shadow">
+                                    <span class="brightness-0">🛒</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Second Product Card -->
+                        <div class="bg-white p-4 sm:p-6 rounded-xl shadow-custom relative">
+                            <button class="absolute right-2 top-2 hover:bg-accent p-1 rounded transition-colors">✕</button>
+                            
+                            <div class="flex flex-col">
+                                <img src="./assets/images/pack_3d_donormyl_cps_pelli_janvier_2023.png" alt="Donormyl" class="w-32 sm:w-40 mx-auto mb-4">
+                                <h3 class="font-bold text-sm text-left mb-2">
+                                    Donormyl (15mg) / 10 comprimés / EXP 12 2024
+                                </h3>
+                                <p class="text-sm text-gray-600 text-left mb-4">
+                                    Donormyl est un médicament contenant du doxylamine, un antihistaminique H1 à propriétés sédatives...
+                                </p>
+                                <p class="font-semibold text-green-600 mb-1 text-left">En Stock</p>
+                                <p class="font-bold text-lg mb-2 text-left">8,25 TND</p>
+                                
+                                <button class="absolute bottom-4 right-4 bg-accent p-2 rounded-md shadow-md hover:shadow-lg transition-shadow">
+                                    <span class="brightness-0">🛒</span>
+                                </button>
+                            </div>
+                        </div>
+                         <!-- Third Product Card -->
+                         <div class="bg-white p-4 sm:p-6 rounded-xl shadow-custom relative">
+                            <button class="absolute right-2 top-2 hover:bg-accent p-1 rounded transition-colors">✕</button>
+                            
+                            <div class="flex flex-col">
+                                <img src="./assets/images/Aeronide.png" alt="Donormyl" class="w-32 sm:w-40 mx-auto mb-4">
+                                <h3 class="font-bold text-sm text-left mb-2">
+                                    Donormyl (15mg) / 10 comprimés / EXP 12 2024
+                                </h3>
+                                <p class="text-sm text-gray-600 text-left mb-4">
+                                    Donormyl est un médicament contenant du doxylamine, un antihistaminique H1 à propriétés sédatives...
+                                </p>
+                                <p class="font-semibold text-green-600 mb-1 text-left">En Stock</p>
+                                <p class="font-bold text-lg mb-2 text-left">8,25 TND</p>
+                                
+                                <button class="absolute bottom-4 right-4 bg-accent p-2 rounded-md shadow-md hover:shadow-lg transition-shadow">
+                                    <span class="brightness-0">🛒</span>
+                                </button>
+                            </div>
+                        </div>
+                         <!-- forth Product Card -->
+                         <div class="bg-white p-4 sm:p-6 rounded-xl shadow-custom relative">
+                            <button class="absolute right-2 top-2 hover:bg-accent p-1 rounded transition-colors">✕</button>
+                            
+                            <div class="flex flex-col">
+                                <img src="./assets/images/fervex.png" alt="Donormyl" class="w-32 sm:w-40 mx-auto mb-4">
+                                <h3 class="font-bold text-sm text-left mb-2">
+                                    Donormyl (15mg) / 10 comprimés / EXP 12 2024
+                                </h3>
+                                <p class="text-sm text-gray-600 text-left mb-4">
+                                    Donormyl est un médicament contenant du doxylamine, un antihistaminique H1 à propriétés sédatives...
+                                </p>
+                                <p class="font-semibold text-green-600 mb-1 text-left">En Stock</p>
+                                <p class="font-bold text-lg mb-2 text-left">8,25 TND</p>
+                                
+                                <button class="absolute bottom-4 right-4 bg-accent p-2 rounded-md shadow-md hover:shadow-lg transition-shadow">
+                                    <span class="brightness-0">🛒</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-6">
+                    <button class="bg-accent text-black px-6 sm:px-8 py-2 rounded-md hover:bg-opacity-90 transition-colors">
+                        Retour
+                    </button>
+                </div>
             </div>
-            <div class="product">
-                <img src="./assets/images/pack_3d_donormyl_cps_pelli_janvier_2023.png" alt="Aldecy" width="15%">
-                <p><strong>Donormyl (15mg) / 10 comprimés / EXP 12 2023</strong></p>
-                <p>Donormyl est un médicament contenant du doxylamine, un antihistaminique H1 à propriétés sédatives...</p>
-                <p><strong>En Stock</strong></p>
-                <p><strong>8,25 TND</strong></p>
-                <button>🛒</button>
-            </div>
-        </section>
-        <button>Retour</button>
+        </div>
     </main>
-    <footer>
-        <div>
-            <img src="./assets/images/image-ai-brush-removebg-7b2rsrbsl (1).png" alt="Pharmacom" width="10%">
-            <p>All rights not reserved</p>
-            <img src="./assets/images/payment 2.png" alt="Payment Methods">
-        </div>
-        <div>
-            <p>Inscrivez-vous à la newsletter Pharmacom</p>
-            <input type="email" placeholder="Saisissez votre email">
-            <button>S'abonner</button>
-        </div>
-    </footer>
+    
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <script>
+    // Fonction pour charger un fichier HTML dans un élément spécifique
+    function loadComponent(containerId, filePath) {
+        fetch(filePath)
+            .then(response => response.text())
+            .then(data => document.getElementById(containerId).innerHTML = data)
+            .catch(error => console.error(`Erreur lors du chargement de ${filePath}:`, error));
+    }
+    // Charger la navbar et le footer
+    loadComponent("navbar-container", "NavBar.html");
+    loadComponent("footer-container", "Footer.html");
+    </script>
 </body>
 </html>
