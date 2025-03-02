@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commande Automatique - Pharmacom</title>
+    <link rel="stylesheet" href="./output.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script src="settings.js"></script> <!-- Inclure settings.js -->
+</head>
+
+<style>
+    .background-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1939309.png-5J5VQ1RfPcMSLZUW3phS1k3NwuLPls.webp');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 60% auto;
+        background-attachment: fixed;
+        opacity: 0.4;
+        z-index: -1; /* Keep it behind other content */
+    }   
+</style>
+
+<body class="bg-background flex flex-col min-h-screen">
+    <!-- Navbar -->
+    <header class="border-b relative z-40">
+        <div id="navbar-container"></div>
+    </header>
+    
+    <main class="flex-1 relative w-full">
+        <div class="background-overlay"></div>
+
+        <!-- Auto-Add Content -->
+        <div class="relative z-10 max-w-screen-xl mx-auto px-4 sm:px-6 py-6">
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden p-6 mb-6">
+                <h1 class="text-2xl font-bold text-black mb-4">Commande automatique avec ordonnance</h1>
+                <p class="text-gray-700 mb-6">Cette fonctionnalité vous permet d'ajouter automatiquement les médicaments de votre ordonnance à votre panier pour faciliter vos achats récurrents.</p>
+
+                <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                    <h2 class="text-xl font-semibold text-black mb-4">Autorisation d'Achat Automatique de Médicaments</h2>
+                    <p class="text-gray-700 mb-4">En activant cette fonctionnalité, vous autorisez notre plateforme à effectuer automatiquement l'achat de vos médicaments selon vos besoins et préférences. Cela implique :</p>
+                    
+                    <ul class="list-disc list-inside space-y-2 mb-6 text-gray-700">
+                        <li><span class="font-semibold">Paiement Automatique :</span> Vos commandes seront réglées automatiquement en fonction de votre abonnement ou de vos prescriptions récurrentes.</li>
+                        <li><span class="font-semibold">Sécurité et Confidentialité :</span> Toutes les transactions sont protégées par des protocoles de chiffrement conformes aux normes bancaires et de santé.</li>
+                        <li><span class="font-semibold">Gestion Flexible :</span> Vous pouvez modifier, suspendre ou désactiver cette fonctionnalité à tout moment depuis votre compte.</li>
+                        <li><span class="font-semibold">Suivi Transparent :</span> Une notification détaillée vous sera envoyée avant chaque achat, précisant les médicaments commandés et le montant facturé.</li>
+                    </ul>
+
+                    <h3 class="font-semibold text-black mb-2">Clause de Non-Responsabilité</h3>
+                    <p class="text-gray-700 mb-4">En activant cette option, vous confirmez être autorisé à effectuer ces achats et acceptez les prélèvements correspondants. La désactivation de cette fonctionnalité n'annulera pas les commandes déjà traitées.</p>
+
+                    <div class="flex items-center mb-6">
+                        <input type="checkbox" id="accept-terms" class="h-5 w-5 text-primary focus:ring-primary border-gray-300 rounded">
+                        <label for="accept-terms" class="ml-2 text-gray-700 font-medium">J'accepte les conditions d'utilisation du service d'achat automatique</label>
+                    </div>
+                </div>
+
+                <div id="payment-method-section" class="hidden bg-gray-50 rounded-lg p-6 mb-6">
+                    <h2 class="text-xl font-semibold text-primary mb-4">Méthode de paiement</h2>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div class="border border-gray-200 rounded-lg p-4 flex items-center">
+                            <input type="radio" id="card-payment" name="payment-method" class="h-5 w-5 text-primary focus:ring-primary" checked>
+                            <label for="card-payment" class="ml-2 flex-1">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-medium">Carte bancaire</span>
+                                    <div class="flex space-x-2">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" alt="Visa" class="h-6">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png" alt="Mastercard" class="h-6">
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600">**** **** **** 4589 - Expire 05/25</p>
+                            </label>
+                        </div>
+                        
+                        <div class="border border-gray-200 rounded-lg p-4 flex items-center">
+                            <input type="radio" id="paypal-payment" name="payment-method" class="h-5 w-5 text-primary focus:ring-primary">
+                            <label for="paypal-payment" class="ml-2 flex-1">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-medium">PayPal</span>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/1280px-PayPal.svg.png" alt="PayPal" class="h-6">
+                                </div>
+                                <p class="text-sm text-gray-600">user@example.com</p>
+                            </label>
+                        </div>
+                        
+                        <div class="border border-gray-200 rounded-lg p-4 flex items-center">
+                            <input type="radio" id="new-card" name="payment-method" class="h-5 w-5 text-primary focus:ring-primary">
+                            <label for="new-card" class="ml-2 flex-1">
+                                <span class="font-medium">Ajouter une nouvelle carte</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <h2 class="text-xl font-semibold p-4 bg-gray-50 border-b border-gray-200">MÉDICAMENTS DÉTECTÉS</h2>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse">
+                        <thead class="bg-gray-100 bg-opacity-20">
+                            <tr>
+                                <th class="text-left py-3 px-4 font-medium text-gray-800">Produit</th>
+                                <th class="text-center py-3 px-4 font-medium text-gray-800">Prix Unitaire</th>
+                                <th class="text-center py-3 px-4 font-medium text-gray-800">QTÉ</th>
+                                <th class="text-center py-3 px-4 font-medium text-gray-800">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="medications-table">
+                            <!-- Les médicaments seront injectés ici par JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="flex justify-between items-center bg-gray-50 py-4 px-6">
+                    <div class="font-semibold text-gray-800 text-xl">TOTAL TTC</div>
+                    <div class="flex items-center gap-1 text-red-600">
+                        <span id="total-price" class="font-bold text-2xl">55,07</span>
+                        <span class="font-bold text-2xl">TND</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-end mt-6">
+                <div class="flex items-center">
+                    <input type="checkbox" id="auto-renewal" class="h-5 w-5 text-primary focus:ring-primary border-gray-300 rounded">
+                    <label for="auto-renewal" class="ml-2 text-gray-700">Activer le renouvellement automatique</label>
+                </div>
+                
+                <button id="confirm-button" class="bg-accent hover:bg-primary hover:text-white text-black font-medium py-2 px-6 rounded-md transition-colors" disabled>
+                    Confirmer la commande
+                </button>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white rounded-lg shadow-xl p-6 max-w-md w-full">
+            <div class="text-center">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 text-green-500 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                
+                <h3 class="text-xl font-semibold mb-2">Commande confirmée !</h3>
+                <p class="text-gray-600 mb-6">
+                    Votre commande a été enregistrée avec succès. Vous recevrez un email de confirmation avec les détails de votre commande.
+                </p>
+                
+                <div class="flex flex-col space-y-2">
+                    <button id="view-order-button" class="bg-primary text-white font-medium py-2 px-4 rounded-md hover:bg-opacity-90 transition-colors">
+                        Voir ma commande
+                    </button>
+                    <button id="continue-shopping-button" class="bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-md hover:bg-gray-300 transition-colors">
+                        Retour à l'accueil
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Load components
+        function loadComponent(containerId, filePath) {
+            fetch(filePath)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(containerId).innerHTML = data;
+                })
+                .catch(error => console.error(`Erreur lors du chargement de ${filePath}:`, error));
+        }
+        
+        // Load navbar and footer
+        loadComponent("navbar-container", "NavBar.html");
+        loadComponent("footer-container", "Footer.html");
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const acceptTermsCheckbox = document.getElementById('accept-terms');
+            const paymentMethodSection = document.getElementById('payment-method-section');
+            const confirmButton = document.getElementById('confirm-button');
+            const autoRenewalCheckbox = document.getElementById('auto-renewal');
+            const successModal = document.getElementById('success-modal');
+            const viewOrderButton = document.getElementById('view-order-button');
+            const continueShoppingButton = document.getElementById('continue-shopping-button');
+            const medicationsTable = document.getElementById('medications-table');
+            const totalPriceElement = document.getElementById('total-price');
+            
+            // Sample medications data
+            const medications = [
+                {
+                    id: 1,
+                    name: "Donormyl (15mg)",
+                    description: "Donormyl est un médicament contenant du doxylamine, un antihistaminique H1 à propriétés sédatives.",
+                    price: 8.25,
+                    quantity: 2,
+                    image: "assets/images/ibprufen.jpg",
+                    form: "Comprimés",
+                    expiryDate: "EXP 12 2023"
+                },
+                {
+                    id: 2,
+                    name: "Doliprane 1000mg",
+                    description: "Un antidouleur utilisé pour soulager la douleur et la fièvre.",
+                    price: 16.32,
+                    quantity: 1,
+                    image: "assets/images/ibprufen.jpg",
+                    form: "Comprimés",
+                    expiryDate: "EXP 06 2024"
+                },
+                {
+                    id: 3,
+                    name: "Aerius 5mg",
+                    description: "Un antihistaminique utilisé pour traiter les symptômes d'allergie.",
+                    price: 22.25,
+                    quantity: 1,
+                    image: "assets/images/ibprufen.jpg",
+                    form: "Comprimés",
+                    expiryDate: "EXP 08 2024"
+                }
+            ];
+            
+            // Render medications
+            renderMedications(medications);
+            
+            // Accept terms checkbox handler
+            acceptTermsCheckbox.addEventListener('change', function() {
+                if (this.checked) {
+                    paymentMethodSection.classList.remove('hidden');
+                } else {
+                    paymentMethodSection.classList.add('hidden');
+                }
+                updateConfirmButton();
+            });
+            
+            // Auto renewal checkbox handler
+            autoRenewalCheckbox.addEventListener('change', function() {
+                updateConfirmButton();
+            });
+            
+            // Confirm button handler
+            confirmButton.addEventListener('click', function() {
+                successModal.classList.remove('hidden');
+            });
+            
+            // View order button handler
+            viewOrderButton.addEventListener('click', function() {
+                window.location.href = 'cart.html';
+            });
+            
+            // Continue shopping button handler
+            continueShoppingButton.addEventListener('click', function() {
+                window.location.href = 'liste.html';
+            });
+            
+            // Update confirm button state
+            function updateConfirmButton() {
+                confirmButton.disabled = !acceptTermsCheckbox.checked;
+                
+                if (confirmButton.disabled) {
+                    confirmButton.classList.add('opacity-50', 'cursor-not-allowed');
+                } else {
+                    confirmButton.classList.remove('opacity-50', 'cursor-not-allowed');
+                }
+            }
+            
+            // Function to render medications
+            function renderMedications(medications) {
+                medicationsTable.innerHTML = '';
+                let total = 0;
+                
+                medications.forEach(medication => {
+                    const subtotal = medication.price * medication.quantity;
+                    total += subtotal;
+                    
+                    const row = document.createElement('tr');
+                    row.className = 'border-t border-gray-200';
+                    row.innerHTML = `
+                        <td class="py-6 px-4">
+                            <div class="flex items-start gap-4">
+                                <img src="${medication.image}" 
+                                     alt="${medication.name}" 
+                                     class="w-20 h-20 object-contain">
+                                <div class="flex flex-col gap-2">
+                                    <h3 class="font-medium text-base">${medication.name} / ${medication.form} / ${medication.expiryDate}</h3>
+                                    <p class="text-xs text-gray-600">
+                                        ${medication.description.substring(0, 100)}...
+                                    </p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="py-6 px-4">
+                            <div class="flex items-center justify-center gap-1">
+                                <span class="font-bold text-base">${medication.price.toFixed(2)}</span>
+                                <span class="font-bold text-base">TND</span>
+                            </div>
+                        </td>
+                        <td class="py-6 px-4">
+                            <div class="flex justify-center">
+                                <div class="inline-flex items-center justify-center border border-gray-300 rounded-md bg-gray-50">
+                                    <button class="px-2 py-1 text-gray-500 hover:bg-gray-100 decrease-quantity" data-id="${medication.id}">-</button>
+                                    <span class="px-4 py-1 font-medium">${medication.quantity}</span>
+                                    <button class="px-2 py-1 text-gray-500 hover:bg-gray-100 increase-quantity" data-id="${medication.id}">+</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="py-6 px-4">
+                            <div class="flex items-center justify-center gap-1">
+                                <span class="font-bold text-base">${subtotal.toFixed(2)}</span>
+                                <span class="font-bold text-base">TND</span>
+                            </div>
+                        </td>
+                    `;
+                    
+                    medicationsTable.appendChild(row);
+                });
+                
+                // Update total price
+                totalPriceElement.textContent = total.toFixed(2);
+                
+                // Add event listeners to quantity buttons
+                document.querySelectorAll('.decrease-quantity').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const medicationId = parseInt(this.getAttribute('data-id'));
+                        updateMedicationQuantity(medicationId, -1);
+                    });
+                });
+                
+                document.querySelectorAll('.increase-quantity').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const medicationId = parseInt(this.getAttribute('data-id'));
+                        updateMedicationQuantity(medicationId, 1);
+                    });
+                });
+            }
+            
+            // Function to update medication quantity
+            function updateMedicationQuantity(medicationId, change) {
+                const medication = medications.find(m => m.id === medicationId);
+                
+                if (medication) {
+                    medication.quantity += change;
+                    
+                    if (medication.quantity < 1) {
+                        medication.quantity = 1;
+                    }
+                    
+                    renderMedications(medications);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

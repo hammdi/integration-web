@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paramètres d'Accessibilité - PharmaCom</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="output.css"/>
+    <script src="settings.js"></script> <!-- Inclure settings.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <style>
+        /* Styles pour les toggles */
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .slider {
+            background-color: #61A9B9;
+        }
+        
+        input:checked + .slider:before {
+            transform: translateX(24px);
+        }
+        
+        body {
+            background-color: #F8F8F8;
+          
+        }
+    </style>
+</head>
+
+<header class="bg-white shadow-md">
+    <div id="navbar-container"></div>
+</header>
+
+
+
+<body class="min-h-screen flex flex-col">
+    <!-- Main Content -->
+    <main class="flex-grow flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-lg max-w-xl w-full overflow-hidden border border-gray-200">
+            <!-- Header -->
+            <div class="p-6 text-center">
+                <h1 class="text-3xl font-bold">Paramètres D'Accessibilité</h1>
+            </div>
+            
+            <!-- Accessibility Options -->
+            <div class="px-6 pb-6 space-y-6">
+                <!-- Toggle Options -->
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="font-medium">Mode lecture simplifiée</span>
+                        <label class="relative inline-block w-12 h-6">
+                            <input type="checkbox" class="sr-only" id="simplified-reading">
+                            <span class="slider absolute cursor-pointer inset-0 bg-gray-300 rounded-full transition-all duration-300"></span>
+                        </label>
+                        <p class="text-xs text-gray-500 w-1/2 text-right">Suppression des éléments visuels non essentiels, affichage texte optimisé</p>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <span class="font-medium">Police d'écriture lisible</span>
+                        <label class="relative inline-block w-12 h-6">
+                            <input type="checkbox" class="sr-only" id="readable-font">
+                            <span class="slider absolute cursor-pointer inset-0 bg-gray-300 rounded-full transition-all duration-300"></span>
+                        </label>
+                        <p class="text-xs text-gray-500 w-1/2 text-right">Remplace les polices complexes par des polices adaptées à la dyslexie</p>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <span class="font-medium">Synthèse vocale</span>
+                        <label class="relative inline-block w-12 h-6">
+                            <input type="checkbox" class="sr-only" id="voice-synthesis">
+                            <span class="slider absolute cursor-pointer inset-0 bg-gray-300 rounded-full transition-all duration-300"></span>
+                        </label>
+                        <p class="text-xs text-gray-500 w-1/2 text-right">Lecture automatique du contenu à l'écran</p>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <span class="font-medium">Commande vocale</span>
+                        <label class="relative inline-block w-12 h-6">
+                            <input type="checkbox" class="sr-only" id="voice-command">
+                            <span class="slider absolute cursor-pointer inset-0 bg-gray-300 rounded-full transition-all duration-300"></span>
+                        </label>
+                        <p class="text-xs text-gray-500 w-1/2 text-right">Naviguer en parlant (nécessite un micro fonctionnel)</p>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <span class="font-medium">Activer le mode boutons agrandis</span>
+                        <label class="relative inline-block w-12 h-6">
+                            <input type="checkbox" class="sr-only" id="large-buttons">
+                            <span class="slider absolute cursor-pointer inset-0 bg-gray-300 rounded-full transition-all duration-300"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <span class="font-medium">Mode Sombre / Clair</span>
+                        <label class="relative inline-block w-12 h-6">
+                            <input type="checkbox" class="sr-only" id="dark-mode">
+                            <span class="slider absolute cursor-pointer inset-0 bg-gray-300 rounded-full transition-all duration-300"></span>
+                        </label>
+                        <p class="text-xs text-gray-500 w-1/2 text-right">Changer le thème</p>
+                    </div>
+                </div>
+                
+                <!-- Contrast Radio Options -->
+                <div>
+                    <h3 class="font-bold mb-2">Contraste des couleurs:</h3>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="contrast" value="normal" checked class="mr-2">
+                            <span>Mode normal</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="contrast" value="high" class="mr-2">
+                            <span>Mode contraste élevé (fond noir, texte blanc)</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="contrast" value="daltonien" class="mr-2">
+                            <span>Mode daltonien (adapté aux déficiences de couleur)</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Text Size Radio Options -->
+                <div>
+                    <h3 class="font-bold mb-2">Taille du texte</h3>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="text-size" value="small" class="mr-2">
+                            <span>Petit</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="text-size" value="medium" checked class="mr-2">
+                            <span>Moyen (par défaut)</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="text-size" value="large" class="mr-2">
+                            <span>Grand</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Save Button -->
+                <div class="mt-8">
+                    <button id="save-settings" class="w-full bg-accent hover:bg-primary hover:text-white transition-colors py-3 px-4 rounded-md font-bold">
+                        Enregistrer Mes Paramètres
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+
+    
+    <script src="settings.js" defer></script>
+</body>
+
+
+    <!-- Footer -->
+    <div id="footer-container" class="mt-12"></div>
+
+    <style>
+        .background-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1939309.png-5J5VQ1RfPcMSLZUW3phS1k3NwuLPls.webp');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 60% auto;
+            background-attachment: fixed;
+            opacity: 0.4;
+            z-index: -1; /* Keep it behind other content */
+        }   
+    </style>
+  
+  <div class="background-overlay"></div>
+  
+    <script>
+    // Fonction pour charger un fichier HTML dans un élément spécifique
+    function loadComponent(containerId, filePath) {
+        fetch(filePath)
+            .then(response => response.text())
+            .then(data => document.getElementById(containerId).innerHTML = data)
+            .catch(error => console.error(`Erreur lors du chargement de ${filePath}:`, error));
+    }
+    // Charger la navbar et le footer
+    loadComponent("navbar-container", "NavBar.html");
+    loadComponent("footer-container", "Footer.html");
+   
+    </script>
+
+
+</html>

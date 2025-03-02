@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre Ordonnance - Pharmacom</title>
+    <link rel="stylesheet" href="./output.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script src="settings.js"></script> <!-- Inclure settings.js -->
+</head>
+
+<style>
+    .background-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1939309.png-5J5VQ1RfPcMSLZUW3phS1k3NwuLPls.webp');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 60% auto;
+        background-attachment: fixed;
+        opacity: 0.4;
+        z-index: -1; /* Keep it behind other content */
+    }   
+</style>
+
+<body class="bg-background flex flex-col min-h-screen">
+    <!-- Navbar -->
+    <header class="border-b relative z-40">
+        <div id="navbar-container"></div>
+    </header>
+    
+    <main class="flex-1 relative w-full">
+        <div class="background-overlay"></div>
+
+        <!-- Ordonnance Content -->
+        <div class="relative z-10 max-w-screen-xl mx-auto px-4 sm:px-6 py-6">
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden p-6">
+                <div id="upload-section" class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-center">Importez votre ordonnance</h2>
+                    
+                    <div class="flex flex-col items-center justify-center border-2 border-dashed border-gray-300 rounded-lg p-8 mb-6">
+                        <div id="preview-container" class="hidden mb-4 w-full max-w-md">
+                            <img id="preview-image" src="" alt="Aperçu de l'ordonnance" class="w-full h-auto rounded-lg shadow-md">
+                        </div>
+                        
+                        <div id="upload-controls" class="flex flex-col items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                            </svg>
+                            <p class="text-gray-600 mb-4 text-center">Glissez-déposez votre ordonnance ici ou cliquez pour parcourir</p>
+                            <input type="file" id="ordonnance-upload" class="hidden" accept="image/*">
+                            <button id="browse-button" class="bg-accent hover:bg-accent hover:text-white text-black font-medium py-2 px-6 rounded-md transition-colors">
+                                Parcourir
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <p class="text-sm text-gray-500 mb-4">Formats acceptés: JPG, PNG, PDF (max 5MB)</p>
+                        <p class="text-sm text-gray-500">Votre ordonnance sera analysée par notre système sécurisé</p>
+                    </div>
+                </div>
+                
+                <div id="analysis-section" class="hidden">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-semibold">Votre Ordonnance</h2>
+                        <button id="new-upload-button" class="text-gray-700 hover:text-accent transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0l-4 4m4-4v12" />
+                            </svg>
+                            Importer une nouvelle ordonnance
+                        </button>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row gap-6 mb-8">
+                        <div class="md:w-1/2">
+                            <div class="border border-gray-200 rounded-lg p-4 h-full">
+                                <h3 class="font-semibold mb-2">Ordonnance analysée</h3>
+                                <img id="analyzed-image" src="" alt="Ordonnance analysée" class="w-full h-auto rounded-lg">
+                            </div>
+                        </div>
+                        
+                        <div class="md:w-1/2">
+                            <div class="border border-gray-200 rounded-lg p-4 h-full">
+                                <h3 class="font-semibold mb-2">Informations détectées</h3>
+                                <div class="space-y-4">
+                                    <div>
+                                        <p class="text-sm text-gray-600">Médecin</p>
+                                        <p class="font-medium">Dr. Martin Dupont</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-600">Date</p>
+                                        <p class="font-medium">15/06/2023</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-600">Médicaments détectés</p>
+                                        <ul class="list-disc list-inside">
+                                            <li>Donormyl 15mg (2 boîtes)</li>
+                                            <li>Doliprane 1000mg (1 boîte)</li>
+                                            <li>Aerius 5mg (1 boîte)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button id="auto-add-button" class="bg-accent hover:bg-primary hover:text-white text-black font-medium py-2 px-6 rounded-md transition-colors">
+                            Ajouter au panier automatique
+                        </button>
+                        <button id="quick-order-button" class="bg-primary text-white font-medium py-2 px-6 rounded-md hover:bg-opacity-90 transition-colors">
+                            Commander rapidement
+                        </button>
+                    </div>
+                </div>
+                
+                <div id="loading-section" class="hidden">
+                    <div class="flex flex-col items-center justify-center py-12">
+                        <div class="mb-6">
+                            <svg class="animate-spin h-12 w-12 text-accent" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Analyse en cours...</h3>
+                        <p class="text-gray-600 text-center max-w-md">
+                            Notre système IA analyse votre ordonnance pour identifier les médicaments prescrits. 
+                            Cela peut prendre quelques instants.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="medications-section" class="hidden mt-8">
+                <h2 class="text-2xl font-semibold mb-6">Médicaments de votre ordonnance</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="medications-container">
+                    <!-- Les médicaments seront injectés ici par JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <script>
+        // Load components
+        function loadComponent(containerId, filePath) {
+            fetch(filePath)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(containerId).innerHTML = data;
+                })
+                .catch(error => console.error(`Erreur lors du chargement de ${filePath}:`, error));
+        }
+        
+        // Load navbar and footer
+        loadComponent("navbar-container", "NavBar.html");
+        loadComponent("footer-container", "Footer.html");
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const uploadSection = document.getElementById('upload-section');
+            const analysisSection = document.getElementById('analysis-section');
+            const loadingSection = document.getElementById('loading-section');
+            const medicationsSection = document.getElementById('medications-section');
+            const browseButton = document.getElementById('browse-button');
+            const ordonnanceUpload = document.getElementById('ordonnance-upload');
+            const previewContainer = document.getElementById('preview-container');
+            const previewImage = document.getElementById('preview-image');
+            const analyzedImage = document.getElementById('analyzed-image');
+            const newUploadButton = document.getElementById('new-upload-button');
+            const autoAddButton = document.getElementById('auto-add-button');
+            const quickOrderButton = document.getElementById('quick-order-button');
+            const medicationsContainer = document.getElementById('medications-container');
+            
+            // Sample medications data
+            const medications = [
+                {
+                    id: 1,
+                    name: "Donormyl (15mg)",
+                    description: "Donormyl est un médicament contenant du doxylamine, un antihistaminique H1 à propriétés sédatives.",
+                    price: 8.25,
+                    image: "assets/images/ibprufen.jpg",
+                    form: "Comprimés",
+                    expiryDate: "EXP 12 2023",
+                    availability: "En stock"
+                },
+                {
+                    id: 2,
+                    name: "Doliprane 1000mg",
+                    description: "Un antidouleur utilisé pour soulager la douleur et la fièvre.",
+                    price: 5.00,
+                    image: "assets/images/ibprufen.jpg",
+                    form: "Comprimés",
+                    expiryDate: "EXP 06 2024",
+                    availability: "En stock"
+                },
+                {
+                    id: 3,
+                    name: "Aerius 5mg",
+                    description: "Un antihistaminique utilisé pour traiter les symptômes d'allergie.",
+                    price: 7.50,
+                    image: "assets/images/ibprufen.jpg",
+                    form: "Comprimés",
+                    expiryDate: "EXP 08 2024",
+                    availability: "En stock"
+                }
+            ];
+            
+            // Browse button click handler
+            browseButton.addEventListener('click', function() {
+                ordonnanceUpload.click();
+            });
+            
+            // File upload handler
+            ordonnanceUpload.addEventListener('change', function(e) {
+                if (e.target.files && e.target.files[0]) {
+                    const file = e.target.files[0];
+                    const reader = new FileReader();
+                    
+                    reader.onload = function(event) {
+                        previewImage.src = event.target.result;
+                        previewContainer.classList.remove('hidden');
+                        
+                        // Show loading section after a short delay
+                        setTimeout(function() {
+                            uploadSection.classList.add('hidden');
+                            loadingSection.classList.remove('hidden');
+                            
+                            // Simulate analysis completion after 3 seconds
+                            setTimeout(function() {
+                                loadingSection.classList.add('hidden');
+                                analysisSection.classList.remove('hidden');
+                                medicationsSection.classList.remove('hidden');
+                                analyzedImage.src = previewImage.src;
+                                
+                                // Render medications
+                                renderMedications(medications);
+                            }, 3000);
+                        }, 1000);
+                    };
+                    
+                    reader.readAsDataURL(file);
+                }
+            });
+            
+            // New upload button click handler
+            newUploadButton.addEventListener('click', function() {
+                analysisSection.classList.add('hidden');
+                medicationsSection.classList.add('hidden');
+                uploadSection.classList.remove('hidden');
+                previewContainer.classList.add('hidden');
+                ordonnanceUpload.value = '';
+            });
+            
+            // Auto add button click handler
+            autoAddButton.addEventListener('click', function() {
+                window.location.href = 'auto-add-to-cart.html';
+            });
+            
+            // Quick order button click handler
+            quickOrderButton.addEventListener('click', function() {
+                window.location.href = 'cart.html';
+            });
+            
+            // Function to render medications
+            function renderMedications(medications) {
+                medicationsContainer.innerHTML = '';
+                
+                medications.forEach(medication => {
+                    const medicationCard = document.createElement('div');
+                    medicationCard.className = 'bg-white rounded-lg shadow-md overflow-hidden';
+                    medicationCard.innerHTML = `
+                        <div class="relative">
+                            <img src="${medication.image}" alt="${medication.name}" class="w-full h-48 object-contain p-2">
+                            <span class="absolute top-2 right-2 bg-primary text-white px-2 py-1 rounded-md text-sm">${medication.price.toFixed(2)} TND</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">${medication.name} / ${medication.form} / ${medication.expiryDate}</h3>
+                            <p class="text-sm text-gray-600 mb-2">${medication.description.substring(0, 100)}...</p>
+                            <div class="flex justify-between items-center mb-2">
+                                <p class="text-sm">
+                                    <span class="font-semibold">Disponibilité:</span>
+                                    <span class="${medication.availability === 'En stock' ? 'text-green-600' : 'text-orange-500'} font-semibold">${medication.availability}</span>
+                                </p>
+                            </div>
+                            <div class="flex justify-between">
+                                <button class="bg-accent hover:bg-primary hover:text-white text-black py-2 px-4 rounded-md transition-colors add-to-cart-btn" data-id="${medication.id}">
+                                    Ajouter au panier
+                                </button>
+                                <button class="bg-white border border-primary text-primary py-2 px-4 rounded-md hover:bg-primary hover:text-white transition-colors view-details-btn" data-id="${medication.id}">
+                                    Voir détails
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    
+                    medicationsContainer.appendChild(medicationCard);
+                });
+                
+                // Add event listeners to buttons
+                document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const medicationId = parseInt(this.getAttribute('data-id'));
+                        const medication = medications.find(m => m.id === medicationId);
+                    //    alert(`${medication.name} ajouté au panier`);
+                    });
+                });
+                
+                document.querySelectorAll('.view-details-btn').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const medicationId = parseInt(this.getAttribute('data-id'));
+                        window.location.href = `product-details.html?id=${medicationId}`;
+                    });
+                });
+            }
+            
+            // Drag and drop functionality
+            const dropZone = document.querySelector('.border-dashed');
+            
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                dropZone.addEventListener(eventName, preventDefaults, false);
+            });
+            
+            function preventDefaults(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            
+            ['dragenter', 'dragover'].forEach(eventName => {
+                dropZone.addEventListener(eventName, highlight, false);
+            });
+            
+            ['dragleave', 'drop'].forEach(eventName => {
+                dropZone.addEventListener(eventName, unhighlight, false);
+            });
+            
+            function highlight() {
+                dropZone.classList.add('border-primary', 'bg-primary', 'bg-opacity-10');
+            }
+            
+            function unhighlight() {
+                dropZone.classList.remove('border-primary', 'bg-primary', 'bg-opacity-10');
+            }
+            
+            dropZone.addEventListener('drop', handleDrop, false);
+            
+            function handleDrop(e) {
+                const dt = e.dataTransfer;
+                const files = dt.files;
+                
+                if (files && files[0]) {
+                    ordonnanceUpload.files = files;
+                    const event = new Event('change', { bubbles: true });
+                    ordonnanceUpload.dispatchEvent(event);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
