@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const productId = parseInt(urlParams.get('id'));
     
     if (!productId) {
-        window.location.href = 'index.html';
+        window.location.href = 'liste.html';
         return;
     }
     
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const product = medications.find(p => p.id === productId);
     
     if (!product) {
-        window.location.href = 'index.html';
+        window.location.href = 'liste.html';
         return;
     }
     
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const backButton = document.getElementById('back-button');
     if (backButton) {
         backButton.addEventListener('click', () => {
-            window.location.href = 'index.html';
+            window.location.href = 'liste.html';
         });
     }
     

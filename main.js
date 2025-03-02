@@ -222,7 +222,7 @@ function setupEventListeners() {
                 state.currentPage++;
                 renderProducts();
                 updatePagination();
-            }
+             }
         });
     }
     
@@ -246,13 +246,12 @@ function setupEventListeners() {
     // Boutons de fonctionnalité
     if (scanBtn) {
         scanBtn.addEventListener('click', () => {
-            alert('Fonctionnalité de scan d\'ordonnance en développement');
+            showOrdonnanceModal();
         });
     }
     
     if (voiceBtn) {
         voiceBtn.addEventListener('click', () => {
-          //  alert('Mode aide vocal avec AI en développement');
             showChatbotPopup();
         });
     }
@@ -648,13 +647,6 @@ function addToCart(product) {
     localStorage.setItem('cart', JSON.stringify(state.cart));
 }
 
-
-
-
-
-
-
-
 // Fonction pour afficher le popup de chatbot
 function showChatbotPopup() {
     // Créer le popup
@@ -901,17 +893,57 @@ function showChatbotPopup() {
     });
 }
 
+// Fonction pour afficher le modal d'ordonnance
+function showOrdonnanceModal() {
+    // Créer le modal
+    const modal = document.createElement('div');
+    modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50';
+    modal.innerHTML = `
+        <div class="modal bg-white p-6 rounded-lg shadow-lg w-11/12 md:w-1/2 lg:w-1/3">
+            <h2 class="text-xl font-bold mb-4">Importer un fichier PDF ou image de l'ordonnance</h2>
+            <p class="mb-4">Message d'acceptation des politiques de confidentialité :</p>
+            <p class="text-sm text-gray-700 mb-4">En continuant à utiliser notre application, vous acceptez nos Politiques de Confidentialité. Nous nous engageons à protéger vos données personnelles et à les utiliser conformément à nos conditions. Vous pouvez consulter les détails de nos politiques <a href="#" class="text-blue-500 underline">[ici]</a>. Si vous êtes d'accord, cliquez sur "Accepter" pour continuer.</p>
+            <div class="checkbox-container flex items-center mb-4">
+                <input type="checkbox" id="accept-checkbox" class="mr-2">
+                <label for="accept-checkbox" class="text-sm">Cliquez sur accepter avant importer</label>
+            </div>
+            <div class="flex justify-between">
+                <button id="import-btn" class="btn btn-primary bg-gray-300 text-gray-700 px-4 py-2 rounded-md" disabled>📂 Importer</button>
+                <button id="close-modal" class="btn btn-secondary bg-gray-200 text-gray-700 px-4 py-2 rounded-md">❌ Retour en arrière</button>
+            </div>
+        </div>
+    `;
 
+    // Ajouter le modal au body
+    document.body.appendChild(modal);
 
+    // Ajouter les écouteurs d'événements
+    const acceptCheckbox = modal.querySelector('#accept-checkbox');
+    const importBtn = modal.querySelector('#import-btn');
+    const closeModal = modal.querySelector('#close-modal');
 
+    // Activer/désactiver le bouton d'importation en fonction de la case à cocher
+    acceptCheckbox.addEventListener('change', function() {
+        importBtn.disabled = !this.checked;
+        if (this.checked) {
+            importBtn.classList.remove('bg-gray-300', 'text-gray-700');
+            importBtn.classList.add('bg-accent', 'text-black');
+        } else {
+            importBtn.classList.remove('bg-accent', 'text-black');
+            importBtn.classList.add('bg-gray-300', 'text-gray-700');
+        }
+    });
 
+    // Gérer le clic sur le bouton d'importation
+    importBtn.addEventListener('click', function() {
+        window.location.href = 'ordonnance.html';
+    });
 
-
-
-
-
-
-
+    // Gérer le clic sur le bouton de fermeture
+    closeModal.addEventListener('click', function() {
+        document.body.removeChild(modal);
+    });
+}
 
 // Afficher le popup d'achat
 function showPurchasePopup(product) {
@@ -930,8 +962,6 @@ function showPurchasePopup(product) {
     // Total
     const total = subtotal + shippingCost;
     
-
-
     // Créer le popup
     const popup = document.createElement('div');
     popup.className = 'fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50';

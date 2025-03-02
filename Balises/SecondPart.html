@@ -8,44 +8,53 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:wght@400;700;800&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
         .order-button {
-            transition: all 0.5s;
+            transition: all 0.3s ease;
         }
         
         .order-button:hover {
-            transform: scale(1.1) translate(8px, 8px);
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
     <div class="w-full max-w-7xl mx-auto p-4">
-        <div class="relative bg-[#025a6e] rounded-2xl p-8 md:p-12 min-h-[400px] md:min-h-[569px] flex flex-col md:flex-row items-start gap-8">
-            <!-- Text Content -->
-            <div class="flex flex-col w-full md:w-1/2">
-                <h1 class="text-4xl md:text-6xl text-white font-extrabold font-['Ubuntu Sans'] capitalize leading-tight mb-8">
-                    PharmaCom
-                </h1>
+        <div class="bg-[#025a6e] rounded-2xl overflow-hidden">
+            <div class="flex flex-col md:flex-row items-stretch"> <!-- Utilisation de items-stretch pour étirer les enfants -->
+                <!-- Text Content -->
+                <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+                    <!-- Titre plus grand -->
+                    <h1 class="text-6xl md:text-7xl text-white font-extrabold font-['Ubuntu Sans'] mb-6">
+                        PharmaCom
+                    </h1>
+                    
+                    <!-- Paragraphe plus grand -->
+                    <p class="text-white text-2xl md:text-3xl font-normal font-['Open Sans'] leading-relaxed mb-8">
+                        Bienvenue sur PharmaCom, votre plateforme de pharmacie en ligne dédiée à rendre la santé accessible, pratique et
+                        rapide. Découvrez une large gamme de médicaments et de produits de santé, accompagnée d'informations détaillées,
+                        de conseils personnalisés et d'une livraison rapide à votre porte. Simplifiez vos soins et gagnez du temps avec
+                        PharmaCom !
+                    </p>
+                    
+                    <!-- Bouton plus grand -->
+                    <button class="order-button flex items-center bg-[#aee2f1] hover:bg-[#9dd8e9] rounded-2xl px-10 py-5 w-fit">
+                        <svg class="w-10 h-10 mr-4" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.1875 32.375C17.4647 32.375 18.5 31.3397 18.5 30.0625C18.5 28.7853 17.4647 27.75 16.1875 27.75C14.9103 27.75 13.875 28.7853 13.875 30.0625C13.875 31.3397 14.9103 32.375 16.1875 32.375Z" fill="black"/>
+                            <path d="M26.9785 32.375C28.2557 32.375 29.291 31.3397 29.291 30.0625C29.291 28.7853 28.2557 27.75 26.9785 27.75C25.7014 27.75 24.666 28.7853 24.666 30.0625C24.666 31.3397 25.7014 32.375 26.9785 32.375Z" fill="black"/>
+                            <path d="M21.5827 21.5679L27.7493 13.8595H23.1243V7.69287H20.041V13.8595H15.416L21.5827 21.5679Z" fill="black"/>
+                            <path d="M26.6869 23.125H16.4502L9.52815 6.52126C9.29345 5.95864 8.89725 5.47823 8.38961 5.14071C7.88197 4.8032 7.28567 4.62374 6.67607 4.62501H3.08398V7.70834H6.67607L13.999 25.2525C14.1146 25.534 14.311 25.775 14.5634 25.9451C14.8158 26.1152 15.113 26.2068 15.4173 26.2083H27.7507C28.0612 26.2074 28.3642 26.1127 28.6201 25.9367C28.8759 25.7606 29.0726 25.5114 29.1844 25.2217L33.5473 13.875H30.2482L26.6869 23.125Z" fill="black"/>
+                        </svg>
+                        <span class="text-black text-2xl font-bold font-['Ubuntu Sans']">Commander</span>
+                    </button>
+                </div>
                 
-                <p class="text-white text-base md:text-xl font-normal font-['Open Sans'] leading-relaxed mb-8 md:mb-12">
-                    Bienvenue sur PharmaCom, votre plateforme de pharmacie en ligne dédiée à rendre la santé accessible, pratique et
-                    rapide. Découvrez une large gamme de médicaments et de produits de santé, accompagnée d'informations détaillées,
-                    de conseils personnalisés et d'une livraison rapide à votre porte. Simplifiez vos soins et gagnez du temps avec
-                    PharmaCom !
-                </p>
-                
-                <button class="order-button flex items-center bg-[#aee2f1] rounded-2xl px-6 py-4 w-fit">
-                    <svg class="w-8 h-8 mr-4" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M16.1875 32.375C17.4647 32.375 18.5 31.3397 18.5 30.0625C18.5 28.7853 17.4647 27.75 16.1875 27.75C14.9103 27.75 13.875 28.7853 13.875 30.0625C13.875 31.3397 14.9103 32.375 16.1875 32.375Z" fill="black"/>
-                        <path d="M26.9785 32.375C28.2557 32.375 29.291 31.3397 29.291 30.0625C29.291 28.7853 28.2557 27.75 26.9785 27.75C25.7014 27.75 24.666 28.7853 24.666 30.0625C24.666 31.3397 25.7014 32.375 26.9785 32.375Z" fill="black"/>
-                        <path d="M21.5827 21.5679L27.7493 13.8595H23.1243V7.69287H20.041V13.8595H15.416L21.5827 21.5679Z" fill="black"/>
-                        <path d="M26.6869 23.125H16.4502L9.52815 6.52126C9.29345 5.95864 8.89725 5.47823 8.38961 5.14071C7.88197 4.8032 7.28567 4.62374 6.67607 4.62501H3.08398V7.70834H6.67607L13.999 25.2525C14.1146 25.534 14.311 25.775 14.5634 25.9451C14.8158 26.1152 15.113 26.2068 15.4173 26.2083H27.7507C28.0612 26.2074 28.3642 26.1127 28.6201 25.9367C28.8759 25.7606 29.0726 25.5114 29.1844 25.2217L33.5473 13.875H30.2482L26.6869 23.125Z" fill="black"/>
-                    </svg>
-                    <span class="text-black text-xl md:text-2xl font-bold font-['Ubuntu Sans']">Commander</span>
-                </button>
-            </div>
-            
-            <!-- Image -->
-            <div class="w-full md:w-1/2">
-                <img class="w-full h-auto rounded-2xl" src="../images/livraison.png" alt="Livraison PharmaCom" />
+                <!-- Image -->
+                <div class="w-full md:w-1/2 flex items-center justify-center p-8 md:p-12">
+                    <img 
+                        class="w-full h-full object-cover rounded-lg" 
+                        src="/images/livraison.png" 
+                        alt="Livraison PharmaCom"
+                    />
+                </div>
             </div>
         </div>
     </div>
