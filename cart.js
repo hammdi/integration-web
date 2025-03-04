@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             state.cart = [];
             localStorage.setItem('cart', JSON.stringify([]));
             // Rediriger vers la page d'accueil
-            window.location.href = 'map.html';
+            window.location.href = 'paiement.html';
         });
     }
 });
