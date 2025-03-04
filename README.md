@@ -1,10 +1,10 @@
 # integration-web
-html css pure de figma au code pour l'equipe Pharmaco de 4TWIN9
+  html css pure de figma au code pour l'equipe Pharmaco de 4TWIN9
 
 
 
-Pharmacom est un projet académique réalisé par l’équipe 4TWIN9.
- Il s’agit d’une pharmacie en ligne fictive, développée en HTML,
+  Pharmacom est un projet académique réalisé par l’équipe Pharmacom de 4TWIN9.
+  Il s’agit d’une pharmacie en ligne fictive, développée en HTML,
   CSS, et TailwindCSS, basée sur un design créé sur Figma. 
   Ce projet vise à pratiquer l’intégration web et la collaboration en équipe.
 
@@ -19,7 +19,7 @@ Hamdi:	Page Accueil, Page Liste (Grille)
 Mehdi:	Page Liste (Mode Liste), Favoris, Détail Médicament, Popup AI
 
 
-#Technologies Utilisées
+# Technologies Utilisées
 HTML5
 CSS3
 TailwindCSS
@@ -44,7 +44,6 @@ base de donnée: data.js
  Affichage en grille ou en liste
  Ajout au panier et comparatif
  Soumettre une ordonnance
-Connexion/inscription (fake)
  Caméra pour scan d’ordonnance (simulation)
  Suggestions AI (popup)
  Favoris et détails produit
