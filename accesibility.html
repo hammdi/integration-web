@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paramètres D'Accessibilité</title>
+    <link href="./styles.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-white-900 flex items-center justify-center min-h-screen p-4">
+    <div class="max-w-2xl w-full bg-blue-100 rounded-lg shadow-md overflow-hidden">
+      <!-- Header -->
+      <div class="p-6">
+        <h1 class="text-2xl font-bold text-gray-800">Paramètres D'Accessibilité</h1>
+      </div>
+      
+      <!-- Settings List -->
+      <div class="px-6 pb-4">
+        <!-- Mode lecture simplifiée -->
+        <div class="flex items-center justify-between py-2">
+          <span class="text-gray-800 font-medium">Mode lecture simplifiée</span>
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" class="sr-only peer" checked>
+            <div class="w-11 h-6 bg-gray-200 peer-checked:bg-blue-500 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+          </label>
+        </div>
+        <div class="text-xs text-gray-600 py-1">Suppression des éléments visuels non essentiels, affichage texte amélioré</div>
+        
+        <!-- Police d'écriture lisible -->
+        <div class="flex items-center justify-between py-2 mt-2">
+          <span class="text-gray-800 font-medium">Police d'écriture lisible</span>
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" class="sr-only peer" checked>
+            <div class="w-11 h-6 bg-gray-200 peer-checked:bg-blue-500 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+          </label>
+        </div>
+        <div class="text-xs text-gray-600 py-1">Remplace les polices complexes par des polices adaptées à la lecture</div>
+        
+        <!-- Synthèse vocale -->
+        <div class="flex items-center justify-between py-2 mt-2">
+          <span class="text-gray-800 font-medium">Synthèse vocale</span>
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" class="sr-only peer" checked>
+            <div class="w-11 h-6 bg-gray-200 peer-checked:bg-blue-500 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+          </label>
+        </div>
+        <div class="text-xs text-gray-600 py-1">Lecture automatique du contenu à l'écran</div>
+        
+        <!-- Commande vocale -->
+        <div class="flex items-center justify-between py-2 mt-2">
+          <span class="text-gray-800 font-medium">Commande vocale</span>
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" class="sr-only peer" checked>
+            <div class="w-11 h-6 bg-gray-200 peer-checked:bg-blue-500 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+          </label>
+        </div>
+        <div class="text-xs text-gray-600 py-1">Naviguer et interagir à distance en vous écoutant</div>
+        
+        <!-- Activer le mode boutons agrandis -->
+        <div class="flex items-center justify-between py-2 mt-2">
+          <span class="text-gray-800 font-medium">Activer le mode boutons agrandis</span>
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" class="sr-only peer" checked>
+            <div class="w-11 h-6 bg-gray-200 peer-checked:bg-blue-500 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+          </label>
+        </div>
+        
+        <!-- Mode Sombre / Clair -->
+        <div class="flex items-center justify-between py-2 mt-2">
+          <span class="text-gray-800 font-medium">Mode Sombre / Clair</span>
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" class="sr-only peer" checked>
+            <div class="w-11 h-6 bg-gray-200 peer-checked:bg-blue-500 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+          </label>
+        </div>
+        <div class="text-xs text-gray-600 py-1">Changer le thème</div>
+        
+        
+
+<div class="relative overflow-x-auto">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3 rounded-s-lg">
+                    Product name
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Qty
+                </th>
+                <th scope="col" class="px-6 py-3 rounded-e-lg">
+                    Price
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="bg-white dark:bg-gray-800">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Apple MacBook Pro 17"
+                </th>
+                <td class="px-6 py-4">
+                    1
+                </td>
+                <td class="px-6 py-4">
+                    $2999
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Microsoft Surface Pro
+                </th>
+                <td class="px-6 py-4">
+                    1
+                </td>
+                <td class="px-6 py-4">
+                    $1999
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Magic Mouse 2
+                </th>
+                <td class="px-6 py-4">
+                   1
+                </td>
+                <td class="px-6 py-4">
+                    $99
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr class="font-semibold text-gray-900 dark:text-white">
+                <th scope="row" class="px-6 py-3 text-base">Total</th>
+                <td class="px-6 py-3">3</td>
+                <td class="px-6 py-3">21,000</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+        <!-- Contraste des couleurs -->
+        <div class="mt-4">
+          <h2 class="text-gray-800 font-medium mb-2">Contraste des couleurs:</h2>
+          <div class="space-y-2">
+            <div class="flex items-center">
+              <input id="normal" name="contrast" type="radio" checked class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+              <label for="normal" class="ml-2 block text-sm text-gray-700">Mode normal</label>
+            </div>
+            <div class="flex items-center">
+              <input id="high" name="contrast" type="radio" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+              <label for="high" class="ml-2 block text-sm text-gray-700">Mode contraste élevé (fond noir, texte blanc)</label>
+            </div>
+            <div class="flex items-center">
+              <input id="daltonism" name="contrast" type="radio" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+              <label for="daltonism" class="ml-2 block text-sm text-gray-700">Mode daltonisme (adapté aux déficiences de couleur)</label>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Taille du texte -->
+        <div class="mt-4">
+          <h2 class="text-gray-800 font-medium mb-2">Taille du texte</h2>
+          <div class="space-y-2">
+            <div class="flex items-center">
+              <input id="small" name="text-size" type="radio" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+              <label for="small" class="ml-2 block text-sm text-gray-700">Petit</label>
+            </div>
+            <div class="flex items-center">
+              <input id="medium" name="text-size" type="radio" checked class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+              <label for="medium" class="ml-2 block text-sm text-gray-700">Moyen (par défaut)</label>
+            </div>
+            <div class="flex items-center">
+              <input id="large" name="text-size" type="radio" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+              <label for="large" class="ml-2 block text-sm text-gray-700">Grand</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Footer with button -->
+      <div class="p-4 flex justify-center">
+        <button class="bg-blue-300 hover:bg-blue-400 text-blue-800 font-medium py-2 px-4 rounded-md w-full max-w-xs transition-colors">
+          Enregistrer Mes Paramètres
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

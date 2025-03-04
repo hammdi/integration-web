@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compte Utilisateur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white-100 flex justify-center items-center min-h-screen">
+
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-3xl w-full">
+        <h2 class="text-xl font-extrabold text-gray-900 mb-10 text-center ">Mon compte</h2>
+        
+         <div class="flex justify-center -mt-10">
+    <div class="relative">
+      <!-- Profile Picture Container -->
+      <div class="h-24 w-24 rounded-full border-4 border-white bg-gray-200 flex items-center justify-center overflow-hidden">
+        <img src="/placeholder.svg?height=96&width=96" alt="Profile" class="h-full w-full object-cover">
+      </div>
+      <!-- Camera Button -->
+      <button class="absolute bottom-0 right-0 bg-white rounded-full p-1 shadow-md">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-600" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M4 5a2 2 0 012-2h1.172a2 2 0 001.414-.586l.828-.828A2 2 0 0110.828 1h2.344a2 2 0 011.414.586l.828.828A2 2 0 0017.828 3H19a1 1 0 011 1v10a2 2 0 01-2 2H3a2 2 0 01-2-2V6a1 1 0 011-1h1.172a2 2 0 001.414-.586L4 5zm0 3v6h12V8H4zm6 1a2 2 0 110 4 2 2 0 010-4z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+        <div class="mb-4">
+            <h3 class="text-lg font-semibold text-gray-700">Informations personnelles</h3>
+            <p class="text-gray-600 font-semibold">Nom & Prénom : <span class="font-light">Mehdi Ben Attaya</span></p>
+            <p class="text-gray-600 font-semibold">Date de naissance : <span class="font-light">12/03/1985</span></p>
+            <p class="text-gray-600 font-semibold">Email : <span class="font-light">mehdi.benAttaya@gmail.com</span></p>
+            <p class="text-gray-600 font-semibold">Téléphone : <span class="font-light">+216 98 123 456</span></p>
+            <p class="text-gray-600"> <div class="text-lg font-semibold text-gray-700">Adresse principale</div> 12, Avenue Habib Bourguiba, Tunis, Tunisie</p>
+            
+            <p class="text-gray-600 font-light" > <div class="text-lg font-semibold text-gray-700 mt-2">Adresse de livraison préférée</div> Résidence Ennacer, Bloc B, App 14, Ariana</p>
+        
+            
+            <p class="text-gray-600">  <div class="text-lg font-semibold text-gray-700">Pharmacie de référence</div> Pharmacie Centrale de Tunis</p>
+        </div>
+
+        <div class="mb-4">
+            <h3 class="text-lg font-semibold text-gray-700">Informations de paiement</h3>
+            <p class="text-gray-600">Carte Bancaire : Visa - **** **** **** 4678 (Expire 06/27)</p>
+            <p class="text-gray-600">Banque associée : <span class="font-medium">BIAT</span></p>
+            <p class="text-gray-600">Paiement mobile : <span class="font-medium text-green-600">Apple Pay activé</span></p>
+        </div>
+
+        
+        <!-- Sécurité & Confidentialité -->
+        <div class="mb-4">
+            <h3 class="text-lg font-semibold text-gray-700">Sécurité & Confidentialité</h3>
+            <p class="text-gray-600">Mot de passe : <span class="font-medium">*********</span> 
+                <a href="#" class="text-blue-500 hover:underline">Modifier</a></p>
+            <p class="text-gray-600">Authentification à deux facteurs : 🟢<span class="font-medium text-green-600">Activée</span></p>
+            <p class="text-gray-600 font-medium mt-2">Historique des connexions :</p>
+            <ul class="text-gray-500 text-sm">
+                <li> Tunis, Tunisie - 28/01/2025 - 14:32</li>
+                <li> Sfax, Tunisie - 25/01/2025 - 19:45</li>
+            </ul>
+        </div>        
+        
+        <div class="flex justify-center mt-6 gap-4">
+    <button class="bg-[#afe3f1] text-gray-900 px-6 py-2 font-bold rounded-md hover:bg-gray-300">
+        Modifier mes informations
+    </button>
+    <button class="bg-[#afe3f1] text-gray-900 px-6 py-2 font-bold rounded-md hover:bg-gray-300">
+        Se déconnecter
+    </button> 
+</div>
+    </div>
+    <!-- Boutons -->
+
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suivi de Livraison</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6 flex justify-center">
+  <div class="w-full max-w-5xl bg-white p-6 rounded-lg shadow-lg">
+    <h1 class="text-2xl font-bold text-gray-800 text-center mb-4">Suivi de votre livraison</h1>
+
+    <!-- Map Section -->
+    <div class="w-full mb-4">
+      <iframe class="w-full h-[300px] md:h-[400px] rounded-md" 
+        src="https://www.google.com/maps/d/embed?mid=1D1HEha3pFcfD6vSYMK34eu2SVD_ZT6U&ehbc=2E312F">
+      </iframe>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+      <button class="bg-[#afe3f1] font-bold text-black px-6 py-2 rounded-md hover:bg-gray-300">
+        Voir caméra
+      </button>
+      <button class="bg-[#afe3f1] font-bold text-black px-6 py-2 rounded-md hover:bg-gray-300">
+        Appeler livreur
+      </button>
+      <button class="bg-[#afe3f1] font-bold text-black px-6 py-2 rounded-md hover:bg-gray-300">
+        Contact service client
+      </button>
+    </div>
+
+    <!-- Table Section -->
+    <div class="overflow-x-auto mt-6">
+      <table class="w-full border-collapse">
+        <tbody>
+          <tr class="border-b bg-gray-100">
+            <td class="p-3 font-semibold text-center">🚚 Suivi de votre livraison</td>
+            <td class="p-3 font-semibold text-center">📦 Détail du colis</td>
+          </tr>
+          <tr class="border-b">
+            <td class="p-3">📍 <strong>Destination:</strong> 12 Rue Habib Bourguiba, Tunis</td>
+            <td class="p-3">🛒 <strong>Commande:</strong> Doliprane 1000MG, Vitamine C, Masques</td>
+          </tr>
+          <tr class="border-b">
+            <td class="p-3">🏍️ <strong>Livreur:</strong> Ahmed Ben Salah (Moto)</td>
+            <td class="p-3">💰 <strong>Total:</strong> 42 DT</td>
+          </tr>
+          <tr class="border-b">
+            <td class="p-3 text-yellow-600 font-semibold">📦 Statut: En cours de livraison</td>
+            <td class="p-3">💳 <strong>Paiement:</strong> À la livraison</td>
+          </tr>
+          <tr class="border-b">
+            <td class="p-3">⏳ <strong>Arrivée estimée:</strong> 15 min</td>
+            <td class="p-3"></td>
+          </tr>
+          <tr class="border-b">
+            <td class="p-3">📏 <strong>Distance restante:</strong> 3,2 km</td>
+            <td class="p-3"></td>
+          </tr>
+          <tr class="border-b">
+            <td class="p-4 text-center">
+              <button class="bg-[#afe3f1] font-bold text-black px-4 py-2 rounded-md hover:bg-gray-300">
+                Retour
+              </button>
+            </td>
+            <td class="p-4 text-center">
+              <button class="bg-[#afe3f1] font-bold text-black px-4 py-2 rounded-md hover:bg-gray-300">
+                Modifier itinéraire
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</body>
+</html>
